@@ -2,68 +2,12 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="shortcut icon"
-            href="./assets/svgs/icon.svg"
-            type="image/x-icon"
-        />
-        <link rel="stylesheet" href="./assets/css/index.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <title>Câmara Municipal de iati</title>
     </head>
     <body>
-        <header
-            class="header-main flex flex-col items-center justify-center font-bold text-white gap-5 sm:flex-row"
-        >
-            <img
-                src="./assets/svgs/icon.svg"
-                class="icon-formater"
-                alt="logotipo-camara"
-            />
-            <aside class="text-xl uppercase text-center">
-                <h1 class="text-2xl font-black">
-                    Câmara municipal de vereadores
-                </h1>
-                <h2>casa pedro cesar de carvalho</h2>
-                <h3 class="font-normal">IATI - pe</h3>
-            </aside>
-        </header>
-        <nav>
-            <div>
-                <ul class="flex flex-col">
-                    <li>Municipio</li>
-                    <li>A Câmara</li>
-                    <li>Legislação</li>
-                    <li>Vereadores</li>
-                    <li>Transparência pública</li>
-                    <li>e-SIC</li>
-                    <li>Ouvidoria</li>
-                </ul>
-            </div>
-            <form class="flex" method="get">
-                <button type="submit" class="px-2">
-                    <i class="bi bi-search"></i>
-                </button>
-                <input
-                    class="py-3 px-2"
-                    required
-                    placeholder="Digite o que precisa..."
-                    type="search"
-                    name="q"
-                    id="searchForum"
-                />
-            </form>
-        </nav>
-        <main>
-            conteudo principal
-            <section>primeira seção noticias</section>
-            <section>segunda seção eventos</section>
-            <section>terceira seção vereadores</section>
-        </main>
+        <div id="root"></div>
+        <script type="module" src="/src/main.tsx"></script>
     </body>
 </html>

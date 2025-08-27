@@ -1,14 +1,11 @@
+@import "tailwindcss";
+
 :root {
     --color-background: #c7b88c;
     --color-black: #0e0e0e;
     --color-white: #ffffff;
     --color-gray: #7a7a7a;
     --color-highlight: #2c2c2c;
-}
-
-form input {
-    outline: none;
-    border: none;
 }
 
 .header-main {
