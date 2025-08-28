@@ -1,10 +1,15 @@
+import { useState } from "react";
+
 export default () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <>
             <header className="relative header-main flex flex-col items-center justify-center font-bold text-white gap-5 sm:flex-row">
                 <button
                     id="burger"
-                    className="cursor-pointer absolute bottom-10 left-35 px-3 rounded-lg transition-colors hover:border-1 shadow-lg sm:hidden"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    className="cursor-pointer absolute bottom-10 left-1/25 -translate-x-1/2 px-3 rounded-lg transition-colors border border-white/50 opacity-75 shadow-lg sm:hidden"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +25,7 @@ export default () => {
                         />
                     </svg>
                 </button>
+
                 <img
                     src="/icon.svg"
                     className="icon-formater"
@@ -33,17 +39,27 @@ export default () => {
                     <h3 className="font-normal">IATI - pe</h3>
                 </aside>
             </header>
-            <aside className="bg-gray-200 relative">
-                <ul className="flex flex-col">
-                    <li>Municipio</li>
-                    <li>A Câmara</li>
-                    <li>Legislação</li>
-                    <li>Vereadores</li>
-                    <li>Transparência pública</li>
-                    <li>e-SIC</li>
-                    <li>Ouvidoria</li>
-                </ul>
-            </aside>
+
+            {menuOpen && (
+                <aside className="fixed top-0 right-0 h-screen w-3/4 bg-gray-200 shadow-lg z-50 flex flex-col items-end gap-5 p-5 sm:hidden">
+                    <button
+                        onClick={() => setMenuOpen(false)}
+                        className="self-end text-2xl font-bold"
+                    >
+                        ✕
+                    </button>
+                    <ul className="flex flex-col text-end gap-2 text-lg font-medium">
+                        <li>Municipio</li>
+                        <li>A Câmara</li>
+                        <li>Legislação</li>
+                        <li>Vereadores</li>
+                        <li>Transparência pública</li>
+                        <li>e-SIC</li>
+                        <li>Ouvidoria</li>
+                    </ul>
+                </aside>
+            )}
+
             <nav>
                 <form method="get" className="px-5">
                     <div className="relative">
@@ -80,6 +96,7 @@ export default () => {
                     </div>
                 </form>
             </nav>
+
             <main>
                 conteudo principal
                 <section>primeira seção noticias</section>

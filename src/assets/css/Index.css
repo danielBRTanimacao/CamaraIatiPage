@@ -8,6 +8,12 @@
     --color-highlight: #2c2c2c;
 }
 
+@layer utilities {
+    .left-1\/25 {
+        left: calc(1 / 2.5 * 100%);
+    }
+}
+
 .header-main {
     position: relative;
     height: 50dvh;
