@@ -1,6 +1,7 @@
 import { useState } from "react";
 import News from "./components/News";
 import Events from "./components/Events";
+import Councilors from "./components/Councilors";
 
 export default () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -143,8 +144,8 @@ export default () => {
             <main className="container">
                 <News />
                 <Events />
-                <section>terceira seção vereadores</section>
             </main>
+            <Councilors />
         </>
     );
 };
