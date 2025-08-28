@@ -1,4 +1,5 @@
 import { useState } from "react";
+import News from "./components/News";
 
 export default () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +33,7 @@ export default () => {
                     alt="logotipo-camara"
                 />
                 <aside className="text-xl uppercase text-center">
-                    <h1 className="text-2xl font-black">
+                    <h1 className="text-2xl  xl:text-4xl  font-black">
                         Câmara municipal de vereadores
                     </h1>
                     <h2>casa pedro cesar de carvalho</h2>
@@ -102,8 +103,8 @@ export default () => {
                 </ul>
             </aside>
 
-            <nav>
-                <form method="get" className="p-5">
+            <nav className="container">
+                <form method="get" className="py-5">
                     <div className="relative">
                         <label
                             htmlFor="searchInput"
@@ -136,9 +137,8 @@ export default () => {
                 </form>
             </nav>
 
-            <main>
-                conteudo principal
-                <section>primeira seção noticias</section>
+            <main className="container">
+                <News />
                 <section>segunda seção eventos</section>
                 <section>terceira seção vereadores</section>
             </main>
