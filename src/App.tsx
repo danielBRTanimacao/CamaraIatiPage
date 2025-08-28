@@ -1,5 +1,6 @@
 import { useState } from "react";
 import News from "./components/News";
+import Events from "./components/Events";
 
 export default () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -33,10 +34,12 @@ export default () => {
                     alt="logotipo-camara"
                 />
                 <aside className="text-xl uppercase text-center">
-                    <h1 className="text-2xl  xl:text-4xl  font-black">
+                    <h1 className="text-2xl xl:text-5xl font-black">
                         Câmara municipal de vereadores
                     </h1>
-                    <h2>casa pedro cesar de carvalho</h2>
+                    <h2 className="xl:text-3xl">
+                        casa pedro cesar de carvalho
+                    </h2>
                     <h3 className="font-normal">IATI - pe</h3>
                 </aside>
             </header>
@@ -139,7 +142,7 @@ export default () => {
 
             <main className="container">
                 <News />
-                <section>segunda seção eventos</section>
+                <Events />
                 <section>terceira seção vereadores</section>
             </main>
         </>

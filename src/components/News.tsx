@@ -1,16 +1,44 @@
+import { useState, useEffect } from "react";
+
 export default () => {
+    const images = [
+        "https://images.myguide-cdn.com/recife/blog/top-6-beaches-in-pernambuco/large/top-6-beaches-in-pernambuco-287290.jpg",
+        "https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg",
+        "https://passagenspromo.com.br/blog/wp-content/uploads/2019/06/pontos-turisticos-de-pernambuco-recife.jpg",
+    ];
+
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrent((prev) => (prev + 1) % images.length);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <article className="row-span-2">
-                <img
-                    src="https://images.myguide-cdn.com/recife/blog/top-6-beaches-in-pernambuco/large/top-6-beaches-in-pernambuco-287290.jpg"
-                    className="w-full h-[25rem] object-cover"
-                />
+            <article className="relative row-span-2 overflow-hidden rounded-lg">
+                {images.map((img, index) => (
+                    <img
+                        key={index}
+                        src={img}
+                        className={`absolute inset-0 w-full h-[25rem] object-cover transition-opacity duration-1000 ease-in-out ${
+                            index === current ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
+                ))}
             </article>
 
-            <div className="bg-[url(https://passagenspromo.com.br/blog/wp-content/uploads/2019/06/pontos-turisticos-de-pernambuco-recife.jpg)] cursor-pointer h-40 w-full rounded-lg bg-cover bg-center hover:bg-size-[auto_25rem]"></div>
+            <a
+                href="#"
+                className="block h-40 w-full rounded-lg bg-[url(https://passagenspromo.com.br/blog/wp-content/uploads/2019/06/pontos-turisticos-de-pernambuco-recife.jpg)] bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
+            ></a>
 
-            <div className="bg-[url(https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg)] cursor-pointer h-40 w-full rounded-lg bg-cover bg-center  hover:bg-size-[auto_25rem]"></div>
+            <a
+                href="#"
+                className="block h-40 w-full rounded-lg bg-[url(https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg)] bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
+            ></a>
         </section>
     );
 };
