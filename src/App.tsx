@@ -44,54 +44,93 @@ export default () => {
                 <aside className="fixed top-0 right-0 h-screen w-3/4 bg-gray-200 shadow-lg z-50 flex flex-col items-end gap-5 p-5 sm:hidden">
                     <button
                         onClick={() => setMenuOpen(false)}
-                        className="self-end text-2xl font-bold"
+                        className="self-end text-2xl font-bold cursor-pointer"
                     >
                         ✕
                     </button>
                     <ul className="flex flex-col text-end gap-2 text-lg font-medium">
-                        <li>Municipio</li>
-                        <li>A Câmara</li>
-                        <li>Legislação</li>
-                        <li>Vereadores</li>
-                        <li>Transparência pública</li>
-                        <li>e-SIC</li>
-                        <li>Ouvidoria</li>
+                        <li>
+                            <a href="#municipio">Municipio</a>
+                        </li>
+                        <li>
+                            <a href="#camara">A Câmara</a>
+                        </li>
+                        <li>
+                            <a href="#legislação">Legislação</a>
+                        </li>
+                        <li>
+                            <a href="#vereadores">Vereadores</a>
+                        </li>
+                        <li>
+                            <a href="#transparencia">Transparência pública</a>
+                        </li>
+                        <li>
+                            <a href="#esic">e-SIC</a>
+                        </li>
+                        <li>
+                            <a href="#ouvidoria">Ouvidoria</a>
+                        </li>
                     </ul>
                 </aside>
             )}
 
+            <aside className="bg-gray-200 shadow-lg hidden p-5 sm:block">
+                <ul className="flex items-center justify-center text-end gap-2 text-lg font-medium">
+                    <li>
+                        <a href="#municipio">Municipio</a>
+                    </li>
+                    <li>
+                        <a href="#camara">A Câmara</a>
+                    </li>
+                    <li>
+                        <a href="#legislação">Legislação</a>
+                    </li>
+                    <li>
+                        <a href="#vereadores" className="hidden md:block">
+                            Vereadores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#transparencia">Transparência pública</a>
+                    </li>
+                    <li>
+                        <a href="#esic">e-SIC</a>
+                    </li>
+                    <li>
+                        <a href="#ouvidoria">Ouvidoria</a>
+                    </li>
+                </ul>
+            </aside>
+
             <nav>
-                <form method="get" className="px-5">
+                <form method="get" className="p-5">
                     <div className="relative">
-                        <span className="absolute inset-y-0 right-2 grid w-8 place-content-center">
-                            <button
-                                type="button"
-                                aria-label="Submit"
-                                className="rounded-full p-1.5 text-gray-700 transition-colors cursor-pointer hover:bg-gray-200"
+                        <label
+                            htmlFor="searchInput"
+                            className="absolute inset-y-0 left-2 grid w-8 place-content-center cursor-pointer"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth="1.5"
+                                stroke="currentColor"
+                                className="h-5 w-5 text-gray-400"
                             >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={"1.5"}
-                                    stroke="currentColor"
-                                    className="size-4"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                                    />
-                                </svg>
-                            </button>
-                        </span>
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                                />
+                            </svg>
+                        </label>
                         <input
                             type="text"
                             id="searchInput"
                             name="q"
                             required
                             placeholder="Digite o que precisa..."
-                            className="mt-0.5 w-full rounded border-gray-900 p-3 shadow-sm sm:text-sm"
+                            className="w-full rounded-full border border-gray-300 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                         />
                     </div>
                 </form>
