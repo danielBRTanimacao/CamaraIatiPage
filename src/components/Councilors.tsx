@@ -13,7 +13,19 @@ import Ver9 from "../assets/images/councilors/ver9.jpeg";
 import Ver10 from "../assets/images/councilors/ver10.jpeg";
 import Ver11 from "../assets/images/councilors/ver11.jpeg";
 
-const ConcilorsImages = [Ver1, Ver2, Ver3, Ver4, Ver5, Ver6, Ver7, Ver8, Ver9, Ver10, Ver11];
+const Councilors = [
+  { name: "Edvaldo Cordeiro", img: Ver1 },
+  { name: "Jose Cicero", img: Ver2 },
+  { name: "Antonio Texeira", img: Ver3 },
+  { name: "Erlan Tenório", img: Ver4 },
+  { name: "Cicero Pereira", img: Ver5 },
+  { name: "Taciano Mota", img: Ver6 },
+  { name: "Everaldo Pereira", img: Ver7 },
+  { name: "Joselio Terezino", img: Ver8 },
+  { name: "Renato Almeida", img: Ver9 },
+  { name: "Rodrigo Ferreira", img: Ver10 },
+  { name: "Arthur Tavares", img: Ver11 },
+];
 
 export default () => {
   return (
@@ -33,14 +45,14 @@ export default () => {
             1280: { slidesPerView: 5 },
           }}
         >
-          {ConcilorsImages.map((image, index) => (
+          {Councilors.map((councilor, index) => (
             <SwiperSlide key={index} className="flex justify-center">
               <div
                 className="flex items-end text-white font-bold h-80 w-55 rounded-xl bg-center bg-cover"
-                style={{ backgroundImage: `url(${image})` }}
+                style={{ backgroundImage: `url(${councilor.img})` }}
               >
                 <aside className="p-3 text-shadow-lg rounded-md">
-                  <p>Nome do vereador {index + 1}</p>
+                  <p>{councilor.name}</p>
                   <p>Partido dele</p>
                 </aside>
               </div>
