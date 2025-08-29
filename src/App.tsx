@@ -2,6 +2,7 @@ import { useState } from "react";
 import News from "./components/News";
 import Events from "./components/Events";
 import Councilors from "./components/Councilors";
+import IconMunicipio from "./assets/svgs/icone-municipio.svg";
 
 export default () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -85,29 +86,121 @@ export default () => {
       <aside className="bg-gray-100 hidden py-5 sm:block border-b-1 border-gray-300">
         <ul className="container flex justify-between items-center text-lg font-bold text-white">
           {[
-            { href: "#municipio", label: "Municipio", extra: "hidden md:block" },
-            { href: "#camara", label: "A Câmara" },
-            { href: "#legislação", label: "Legislação" },
-            { href: "#vereadores", label: "Vereadores", extra: "hidden lg:block" },
-            { href: "#transparencia", label: "Transparência pública", extra: "hidden 2xl:block" },
-            { href: "#esic", label: "e-SIC" },
-            { href: "#ouvidoria", label: "Ouvidoria", extra: "hidden xl:block" },
+            {
+              href: "#municipio",
+              label: "Municipio",
+              extra: "hidden md:block",
+              image: IconMunicipio,
+            },
+            {
+              href: "#camara",
+              label: "A Câmara",
+              image: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  className="bi bi-house-gear-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708z" />
+                  <path d="M11.07 9.047a1.5 1.5 0 0 0-1.742.26l-.02.021a1.5 1.5 0 0 0-.261 1.742 1.5 1.5 0 0 0 0 2.86 1.5 1.5 0 0 0-.12 1.07H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6 4.724 4.724a1.5 1.5 0 0 0-1.654 1.03" />
+                  <path d="m13.158 9.608-.043-.148c-.181-.613-1.049-.613-1.23 0l-.043.148a.64.64 0 0 1-.921.382l-.136-.074c-.561-.306-1.175.308-.87.869l.075.136a.64.64 0 0 1-.382.92l-.148.045c-.613.18-.613 1.048 0 1.229l.148.043a.64.64 0 0 1 .382.921l-.074.136c-.306.561.308 1.175.869.87l.136-.075a.64.64 0 0 1 .92.382l.045.149c.18.612 1.048.612 1.229 0l.043-.15a.64.64 0 0 1 .921-.38l.136.074c.561.305 1.175-.309.87-.87l-.075-.136a.64.64 0 0 1 .382-.92l.149-.044c.612-.181.612-1.049 0-1.23l-.15-.043a.64.64 0 0 1-.38-.921l.074-.136c.305-.561-.309-1.175-.87-.87l-.136.075a.64.64 0 0 1-.92-.382ZM12.5 14a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                </svg>
+              ),
+            },
+            {
+              href: "#legislação",
+              label: "Legislação",
+              image: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  className="bi bi-paperclip"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0z" />
+                </svg>
+              ),
+            },
+            {
+              href: "#vereadores",
+              label: "Vereadores",
+              extra: "hidden lg:block",
+              image: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  className="bi bi-person-rolodex"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                  <path d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1z" />
+                </svg>
+              ),
+            },
+            {
+              href: "#transparencia",
+              label: "Transparência pública",
+              extra: "hidden 2xl:block",
+              image: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  className="bi bi-people"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+                </svg>
+              ),
+            },
+            {
+              href: "#esic",
+              label: "e-SIC",
+              image: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  className="bi bi-archive"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
+                </svg>
+              ),
+            },
+            {
+              href: "#ouvidoria",
+              label: "Ouvidoria",
+              extra: "hidden xl:block",
+              image: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  className="bi bi-headset"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5" />
+                </svg>
+              ),
+            },
           ].map((item) => (
             <li key={item.href} className={item.extra || ""}>
               <a
                 className="p-4 w-36 h-36 sm:w-40 bg-green-700 hover:bg-green-800 rounded-lg flex flex-col items-center justify-center text-center"
                 href={item.href}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="42"
-                  height="42"
-                  fill="currentColor"
-                  className="bi bi-house"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
-                </svg>
+                {typeof item.image == "string" ? <img src={item.image} alt="" /> : item.image}
                 <span className="mt-2">{item.label}</span>
               </a>
             </li>
