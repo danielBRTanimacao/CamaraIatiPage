@@ -51,34 +51,48 @@ export default () => {
       </header>
 
       {menuOpen && (
-        <aside className="fixed top-0 right-0 h-screen w-3/4 bg-gray-200 shadow-lg z-50 flex flex-col items-end gap-5 p-5 sm:hidden">
+        <aside className="fixed top-0 right-0 h-screen w-3/4 bg-amber-400 text-white shadow-lg z-50 flex flex-col items-end gap-5 p-5 sm:hidden">
           <button
             onClick={() => setMenuOpen(false)}
-            className="self-end text-2xl font-bold cursor-pointer"
+            className="self-end text-2xl font-bold cursor-pointer transition-all hover:scale-125"
           >
             ✕
           </button>
           <ul className="flex flex-col text-end gap-2 text-lg font-medium">
             <li>
-              <a href="#municipio">Municipio</a>
+              <a href="#municipio" className="transition-all hover:text-xl">
+                Municipio
+              </a>
             </li>
             <li>
-              <a href="#camara">A Câmara</a>
+              <a href="#camara" className="transition-all hover:text-xl">
+                A Câmara
+              </a>
             </li>
             <li>
-              <a href="#legislação">Legislação</a>
+              <a href="#legislação" className="transition-all hover:text-xl">
+                Legislação
+              </a>
             </li>
             <li>
-              <a href="#vereadores">Vereadores</a>
+              <a href="#vereadores" className="transition-all hover:text-xl">
+                Vereadores
+              </a>
             </li>
             <li>
-              <a href="#transparencia">Transparência pública</a>
+              <a href="#transparencia" className="transition-all hover:text-xl">
+                Transparência pública
+              </a>
             </li>
             <li>
-              <a href="#esic">e-SIC</a>
+              <a href="#esic" className="transition-all hover:text-xl">
+                e-SIC
+              </a>
             </li>
             <li>
-              <a href="#ouvidoria">Ouvidoria</a>
+              <a href="#ouvidoria" className="transition-all hover:text-xl">
+                Ouvidoria
+              </a>
             </li>
           </ul>
         </aside>
@@ -198,7 +212,7 @@ export default () => {
           ].map((item) => (
             <li key={item.href} className={item.extra || ""}>
               <a
-                className="p-4 w-36 h-36 sm:w-40 bg-green-700 hover:bg-green-800 rounded-lg flex flex-col items-center justify-center text-center"
+                className="transition-all hover:scale-110 p-4 w-36 h-36 sm:w-40 bg-green-700 hover:bg-green-800 rounded-lg flex flex-col items-center justify-center text-center"
                 href={item.href}
               >
                 {typeof item.image == "string" ? <img src={item.image} alt="" /> : item.image}

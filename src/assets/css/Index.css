@@ -56,6 +56,14 @@
   width: 6.5rem;
 }
 
+.swiper-with-padding {
+  padding-bottom: 3rem !important;
+}
+
+.swiper-pagination-bullets {
+  bottom: 0px !important;
+}
+
 @media (width >= 40rem) {
   .header-main::before {
     backdrop-filter: blur(3px);
