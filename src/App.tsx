@@ -82,34 +82,34 @@ export default () => {
         </aside>
       )}
 
-      <aside className="bg-gray-100 hidden p-5 sm:block border-b-1 border-gray-300">
+      <aside className="bg-gray-100 hidden py-5 sm:block border-b-1 border-gray-300">
         <ul className="container flex justify-between items-center text-lg font-bold text-white">
           {[
-            { href: "#municipio", label: "Municipio" },
+            { href: "#municipio", label: "Municipio", extra: "hidden md:block" },
             { href: "#camara", label: "A Câmara" },
             { href: "#legislação", label: "Legislação" },
-            { href: "#vereadores", label: "Vereadores", extra: "hidden md:block" },
-            { href: "#transparencia", label: "Transparência pública", extra: "hidden lg:block" },
+            { href: "#vereadores", label: "Vereadores", extra: "hidden lg:block" },
+            { href: "#transparencia", label: "Transparência pública", extra: "hidden 2xl:block" },
             { href: "#esic", label: "e-SIC" },
-            { href: "#ouvidoria", label: "Ouvidoria", extra: "hidden lg:block" },
+            { href: "#ouvidoria", label: "Ouvidoria", extra: "hidden xl:block" },
           ].map((item) => (
-            <li
-              key={item.href}
-              className={`p-2 w-45 h-35 bg-green-700 rounded-lg flex items-center justify-center flex-col ${
-                item.extra || ""
-              }`}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="42"
-                height="42"
-                fill="currentColor"
-                className="bi bi-house"
-                viewBox="0 0 16 16"
+            <li key={item.href} className={item.extra || ""}>
+              <a
+                className="p-4 w-36 h-36 sm:w-40 bg-green-700 hover:bg-green-800 rounded-lg flex flex-col items-center justify-center text-center"
+                href={item.href}
               >
-                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
-              </svg>
-              <a href={item.href}>{item.label}</a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="42"
+                  height="42"
+                  fill="currentColor"
+                  className="bi bi-house"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                </svg>
+                <span className="mt-2">{item.label}</span>
+              </a>
             </li>
           ))}
         </ul>
@@ -150,20 +150,6 @@ export default () => {
       </nav>
 
       <main className="container">
-        <h1 className="pb-5 text-2xl font-extrabold flex items-center gap-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            fill="currentColor"
-            className="bi bi-calendar-week"
-            viewBox="0 0 16 16"
-          >
-            <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
-            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
-          </svg>
-          <span>Principais Noticias</span>
-        </h1>
         <News />
         <h1 className="pt-5 text-2xl font-extrabold flex items-center gap-3">
           <svg
