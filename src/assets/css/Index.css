@@ -1,79 +1,79 @@
 @import "tailwindcss";
 
 :root {
-    --color-background: #c7b88c;
-    --color-black: #0e0e0e;
-    --color-white: #ffffff;
-    --color-gray: #7a7a7a;
-    --color-highlight: #2c2c2c;
+  --color-background: #c7b88c;
+  --color-black: #0e0e0e;
+  --color-white: #ffffff;
+  --color-gray: #7a7a7a;
+  --color-highlight: #2c2c2c;
 }
 
 @layer utilities {
-    .left-1\/25 {
-        left: calc(1 / 2.5 * 100%);
-    }
+  .left-1\/25 {
+    left: calc(1 / 2.5 * 100%);
+  }
 }
 
 .bg-yl {
-    background-color: var(--color-background);
+  background-color: var(--color-background);
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .header-main {
-    position: relative;
-    height: 50dvh;
-    background-image: url(../images/iati.jpeg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  position: relative;
+  height: 50dvh;
+  background-image: url(../images/iati.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .header-main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(6px);
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  z-index: 1;
 }
 
 .header-main > * {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .icon-formater {
-    width: 6.5rem;
+  width: 6.5rem;
 }
 
 @media (width >= 40rem) {
-    .header-main::before {
-        backdrop-filter: blur(3px);
-    }
-    .icon-formater {
-        width: 8rem;
-    }
-    .container {
-        padding: 0 2rem;
-    }
+  .header-main::before {
+    backdrop-filter: blur(3px);
+  }
+  .icon-formater {
+    width: 8rem;
+  }
+  .container {
+    padding: 0 2rem;
+  }
 }
 
 @media (width >= 48rem) {
-    .container {
-        padding: 0 2.3rem;
-    }
+  .container {
+    padding: 0 2.3rem;
+  }
 }
 
 @media (width >= 80rem) {
-    .container {
-        padding: 0 4rem;
-    }
+  .container {
+    padding: 0 4rem;
+  }
 }

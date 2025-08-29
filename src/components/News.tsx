@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 
+import NewImage from "../assets/images/news/newsImage.png";
+import NewImage2 from "../assets/images/news/newImage2.png";
+
 export default () => {
     const images = [
         "https://images.myguide-cdn.com/recife/blog/top-6-beaches-in-pernambuco/large/top-6-beaches-in-pernambuco-287290.jpg",
-        "https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg",
-        "https://passagenspromo.com.br/blog/wp-content/uploads/2019/06/pontos-turisticos-de-pernambuco-recife.jpg",
+        NewImage,
+        NewImage2,
     ];
 
     const [current, setCurrent] = useState(0);
