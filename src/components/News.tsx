@@ -3,9 +3,31 @@ import { useState, useEffect } from "react";
 import NewImage from "../assets/images/news/newsImage.png";
 import NewImage2 from "../assets/images/news/newImage2.png";
 import NewImage3 from "../assets/images/events/event2.jpeg";
+import NewImage4 from "../assets/images/events/reunion.png";
+import NewImage5 from "../assets/images/events/pista.jpeg";
+import NewImage6 from "../assets/images/events/barragem.jpeg";
 
 export default () => {
   const images = [NewImage3, NewImage, NewImage2];
+  const newsIati = [
+    {
+      img: NewImage6,
+      title: "Água para o povo local: Projeto promete abastecer a comunidade por décadas.",
+    },
+    {
+      img: NewImage2,
+      title: "Reunião para a economia: Governo traça planos para impulsionar crescimento do país.",
+    },
+    {
+      img: NewImage4,
+      title: "Reunião na Câmara: Vereadores debatem projeto de lei para o orçamento municipal.",
+    },
+    {
+      img: NewImage5,
+      title:
+        "Motocross na cidade: O melhor da região faz história e atrai pilotos e público de todo o país.",
+    },
+  ];
 
   const [current, setCurrent] = useState(0);
 
@@ -53,47 +75,22 @@ export default () => {
           className="block h-40 w-full rounded-lg bg-[url(https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg)] bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
         ></a>
       </section>
-      <aside className="pt-5 text-center flex justify-between">
-        <div className="w-80">
-          <img
-            className="h-40 w-80"
-            src="https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg"
-            alt="img-noticia"
-          />
-          <p className="text-gray-500 pt-2 text-base/4">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </p>
-        </div>
-        <div className="w-80">
-          <img
-            className="h-40 w-80"
-            src="https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg"
-            alt="img-noticia"
-          />
-          <p className="text-gray-500 pt-2 text-base/4">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </p>
-        </div>
-        <div className="w-80">
-          <img
-            className="h-40 w-80"
-            src="https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg"
-            alt="img-noticia"
-          />
-          <p className="text-gray-500 pt-2 text-base/4">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </p>
-        </div>
-        <div className="w-80">
-          <img
-            className="h-40 w-80"
-            src="https://www.maladeaventuras.com/wp-content/uploads/2024/08/recife.jpg"
-            alt="img-noticia"
-          />
-          <p className="text-gray-500 pt-2 text-base/4">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </p>
-        </div>
+      <aside className="pt-5 text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 justify-items-center">
+        {newsIati.map((item, key) => (
+          <div
+            key={key}
+            className={`
+        w-full max-w-xs 
+        ${key === 0 ? "block" : "hidden"} 
+        ${key === 1 ? "sm:block" : ""} 
+        ${key === 2 ? "md:block" : ""} 
+        ${key === 3 ? "md:block" : ""}
+      `}
+          >
+            <img src={item.img} alt="img-noticia" className="w-full h-48 object-cover" />
+            <p className="text-gray-500 pt-2 text-base leading-4">{item.title}</p>
+          </div>
+        ))}
       </aside>
     </>
   );

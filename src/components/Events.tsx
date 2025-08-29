@@ -2,7 +2,15 @@ import EventPhoto from "../assets/images/events/event1.jpeg";
 import NotFound from "../assets/svgs/not-found.svg";
 
 export default () => {
-  const eventData = [{ day: 29, month: "Agosto", title: "9º Reunião 3º periodo", img: EventPhoto }];
+  const eventData = [
+    {
+      day: 29,
+      month: "Agosto",
+      title: "10° reunião ordinária do terceiro período legislativo",
+      adress: "R. Padre Nelson B Carvalho",
+      img: EventPhoto,
+    },
+  ];
 
   const finalEvents = [
     ...eventData.slice(0, 4),
@@ -30,7 +38,7 @@ export default () => {
                   <strong>Horario:</strong> 11:00 - 12:00
                 </p>
                 <p className="pb-2">
-                  <strong>Local:</strong> Rua alguma coisa para teste
+                  <strong>Local:</strong> {item.adress}
                 </p>
                 <div className="pb-4">
                   <a href="#" className="flex items-center gap-1 pb-4">

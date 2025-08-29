@@ -3,6 +3,7 @@ import News from "./components/News";
 import Events from "./components/Events";
 import Councilors from "./components/Councilors";
 import IconMunicipio from "./assets/svgs/icone-municipio.svg";
+import Footer from "./components/Footer";
 
 export default () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -261,6 +262,7 @@ export default () => {
         <Events />
       </main>
       <Councilors />
+      <Footer />
     </>
   );
 };
