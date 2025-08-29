@@ -13,6 +13,8 @@ import Ver9 from "../assets/images/councilors/ver9.jpeg";
 import Ver10 from "../assets/images/councilors/ver10.jpeg";
 import Ver11 from "../assets/images/councilors/ver11.jpeg";
 
+import BgUrl from "../assets/images/camara-bg.jpeg";
+
 const Councilors = [
   { name: "Edvaldo Cordeiro", img: Ver1 },
   { name: "Jose Cicero", img: Ver2 },
@@ -29,7 +31,12 @@ const Councilors = [
 
 export default () => {
   return (
-    <section className="bg-amber-300 h-120 my-10 py-12">
+    <section
+      className="bg-amber-300 h-120 my-10 py-12 bg-no-repeat bg-center bg-cover"
+      style={{
+        backgroundImage: `url(${BgUrl})`,
+      }}
+    >
       <div className="container">
         <h3 className="text-3xl text-center text-white font-extrabold pb-3">VEREADORES</h3>
         <Swiper

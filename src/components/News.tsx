@@ -2,13 +2,10 @@ import { useState, useEffect } from "react";
 
 import NewImage from "../assets/images/news/newsImage.png";
 import NewImage2 from "../assets/images/news/newImage2.png";
+import NewImage3 from "../assets/images/events/event2.jpeg";
 
 export default () => {
-  const images = [
-    "https://images.myguide-cdn.com/recife/blog/top-6-beaches-in-pernambuco/large/top-6-beaches-in-pernambuco-287290.jpg",
-    NewImage,
-    NewImage2,
-  ];
+  const images = [NewImage3, NewImage, NewImage2];
 
   const [current, setCurrent] = useState(0);
 
