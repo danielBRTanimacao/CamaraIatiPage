@@ -4,11 +4,11 @@ import "swiper/swiper-bundle.css";
 
 import NewImage from "../assets/images/news/newsImage.png";
 import NewImage2 from "../assets/images/news/newImage2.png";
-import NewImage3 from "../assets/images/events/event2.jpeg";
+import NewImage3 from "../assets/images/events/event2.webp";
 import NewImage4 from "../assets/images/events/reunion.png";
-import NewImage5 from "../assets/images/events/pista.jpeg";
-import NewImage6 from "../assets/images/events/barragem.jpeg";
-import NewImage7 from "../assets/images/news/news3.jpeg";
+import NewImage5 from "../assets/images/events/pista.webp";
+import NewImage6 from "../assets/images/events/barragem.webp";
+import NewImage7 from "../assets/images/news/news3.webp";
 
 export default () => {
   const images = [NewImage3, NewImage, NewImage2];

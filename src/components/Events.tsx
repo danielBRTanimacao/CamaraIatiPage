@@ -1,4 +1,4 @@
-import EventPhoto from "../assets/images/events/event1.jpeg";
+import EventPhoto from "../assets/images/events/event1.webp";
 import NotFound from "../assets/svgs/not-found.svg";
 
 export default () => {

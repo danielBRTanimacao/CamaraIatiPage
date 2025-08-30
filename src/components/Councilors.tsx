@@ -11,8 +11,8 @@ import Ver6 from "../assets/images/councilors/ver6.jpeg";
 import Ver7 from "../assets/images/councilors/ver7.jpeg";
 import Ver8 from "../assets/images/councilors/ver8.jpeg";
 import Ver9 from "../assets/images/councilors/ver9.jpeg";
-import Ver10 from "../assets/images/councilors/ver10.jpeg";
-import Ver11 from "../assets/images/councilors/ver11.jpeg";
+import Ver10 from "../assets/images/councilors/ver10.webp";
+import Ver11 from "../assets/images/councilors/ver11.webp";
 
 import BgUrl from "../assets/images/camara-bg.jpeg";
 
