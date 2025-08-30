@@ -67,8 +67,8 @@ export default () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Contato</h3>
             <p className="text-sm">
-              Sua descrição aqui. Focamos em entregar soluções inovadoras e de alta qualidade para
-              nossos clientes.
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum enim ex aliquid fugit
+              numquam ab?
             </p>
             <ul className="space-y-2">
               <li>
