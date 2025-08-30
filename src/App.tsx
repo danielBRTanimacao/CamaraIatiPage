@@ -4,12 +4,14 @@ import Events from "./components/Events";
 import Councilors from "./components/Councilors";
 import IconMunicipio from "./assets/svgs/icone-municipio.svg";
 import Footer from "./components/Footer";
+import Accessibility from "./components/Accessibility";
 
 export default () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
+      <Accessibility />
       <header
         className="
       relative 

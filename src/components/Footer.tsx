@@ -2,36 +2,63 @@ export default () => {
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Nome da Empresa</h3>
-            <p className="text-sm">
-              Sua descrição aqui. Focamos em entregar soluções inovadoras e de alta qualidade para
-              nossos clientes.
-            </p>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="hover:text-white transition duration-300">
-                  Sobre Nós
+                  Agenda Oficial
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition duration-300">
-                  Serviços
+                  Atlas das reuniões
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition duration-300">
-                  Blog
+                  Pautas das reuniões
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition duration-300">
-                  Contato
+                  Requerimentos
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition duration-300">
+                  Vereadores
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="hover:text-white transition duration-300">
+                  e-SIC
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition duration-300">
+                  Glossário
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition duration-300">
+                  Perguntas frequentes
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition duration-300">
+                  Mapa do site
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition duration-300">
+                  Ouvidoria
                 </a>
               </li>
             </ul>
@@ -39,6 +66,10 @@ export default () => {
 
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Contato</h3>
+            <p className="text-sm">
+              Sua descrição aqui. Focamos em entregar soluções inovadoras e de alta qualidade para
+              nossos clientes.
+            </p>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="hover:text-white transition duration-300">
@@ -52,7 +83,7 @@ export default () => {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition duration-300">
-                  Endereço: Rua Exemplo, 123
+                  Endereço: R. Padre Nelson B Carvalho
                 </a>
               </li>
             </ul>
@@ -72,11 +103,13 @@ export default () => {
                 </svg>
               </a>
             </div>
+            <h3 className="text-md font-semibold text-white mt-3">Feito por:</h3>
+            <p>Daniel Tenório</p>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Nome da Empresa. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Câmara Iati. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

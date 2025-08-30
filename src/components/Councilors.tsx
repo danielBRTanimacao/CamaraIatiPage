@@ -33,7 +33,7 @@ const Councilors = [
 export default () => {
   return (
     <section
-      className="bg-amber-300 h-140 my-10 py-20 bg-no-repeat bg-center bg-cover"
+      className="bg-amber-300 h-150 mt-10 py-30 bg-no-repeat bg-center bg-cover"
       style={{
         backgroundImage: `url(${BgUrl})`,
       }}
