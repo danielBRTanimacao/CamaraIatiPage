@@ -44,7 +44,7 @@ export default () => {
           </svg>
         </button>
 
-        <img src="/icon.svg" className="icon-formater" alt="logotipo-camara" />
+        <img src="/icon.png" className="icon-formater" alt="logotipo-camara" />
         <aside className="text-xl uppercase text-center">
           <h1 className="text-2xl xl:text-5xl font-black">Câmara municipal de vereadores</h1>
           <h2 className="xl:text-3xl">casa pedro cesar de carvalho</h2>
@@ -53,7 +53,12 @@ export default () => {
       </header>
 
       {menuOpen && (
-        <aside className="fixed top-0 right-0 h-screen w-3/4 bg-amber-400 text-white shadow-lg z-50 flex flex-col items-end gap-5 p-5 sm:hidden">
+        <aside
+          className="fixed 
+        top-0 right-0 h-screen w-3/4 
+        bg-amber-400 text-white shadow-lg 
+        z-50 flex flex-col items-end gap-5 p-5 sm:hidden"
+        >
           <button
             onClick={() => setMenuOpen(false)}
             className="self-end text-2xl font-bold cursor-pointer transition-all hover:scale-125"
