@@ -71,7 +71,7 @@ export default () => {
             <SwiperSlide key={index} className="flex items-center justify-center">
               <a
                 href="#"
-                className="block transform transition-transform duration-500 hover:scale-110 mx-auto"
+                className="block flex items-center justify-center transform transition-transform duration-500 hover:scale-110 mx-auto"
               >
                 <div
                   className="flex items-end text-white font-bold h-80 w-55 rounded-xl bg-center bg-cover shadow-lg"

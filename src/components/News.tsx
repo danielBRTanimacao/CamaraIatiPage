@@ -83,7 +83,8 @@ export default () => {
 
       <aside className="pt-5 text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 justify-items-center">
         {newsIati.map((item, key) => (
-          <div
+          <a
+            href="#"
             key={key}
             className={`
               w-full max-w-xs 
@@ -95,7 +96,7 @@ export default () => {
           >
             <img src={item.img} alt="img-noticia" className="w-full h-48 object-cover" />
             <p className="text-gray-500 pt-2 text-base leading-4">{item.title}</p>
-          </div>
+          </a>
         ))}
       </aside>
     </>
