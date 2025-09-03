@@ -20,7 +20,12 @@ export default () => {
   return (
     <section className="pt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
       {finalEvents.map((item, index) => (
-        <div key={index} className="w-full rounded-2xl border-1 border-gray-300">
+        <div
+          key={index}
+          className={`w-full rounded-2xl border-1 border-gray-300 ${
+            item ? "" : "flex items-center justify-center"
+          }`}
+        >
           {item ? (
             <>
               <div
@@ -66,7 +71,7 @@ export default () => {
           ) : (
             <div className="flex items-center flex-col justify-center h-60 text-center gap-5 text-gray-500">
               <img src={NotFound} width={150} alt="" />
-              <h3 className="text-lg font-bold">Ainda não temos novos eventos</h3>
+              <h3 className="text-lg font-bold mx-2">Ainda não temos novos eventos</h3>
             </div>
           )}
         </div>
