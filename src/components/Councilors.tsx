@@ -2,19 +2,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
-import Ver1 from "../assets/images/councilors/ver1.jpeg";
-import Ver2 from "../assets/images/councilors/ver2.jpeg";
-import Ver3 from "../assets/images/councilors/ver3.jpeg";
-import Ver4 from "../assets/images/councilors/ver4.jpeg";
-import Ver5 from "../assets/images/councilors/ver5.jpeg";
-import Ver6 from "../assets/images/councilors/ver6.jpeg";
-import Ver7 from "../assets/images/councilors/ver7.jpeg";
-import Ver8 from "../assets/images/councilors/ver8.jpeg";
-import Ver9 from "../assets/images/councilors/ver9.jpeg";
+import Ver1 from "../assets/images/councilors/ver1.webp";
+import Ver2 from "../assets/images/councilors/ver2.webp";
+import Ver3 from "../assets/images/councilors/ver3.webp";
+import Ver4 from "../assets/images/councilors/ver4.webp";
+import Ver5 from "../assets/images/councilors/ver5.webp";
+import Ver6 from "../assets/images/councilors/ver6.webp";
+import Ver7 from "../assets/images/councilors/ver7.webp";
+import Ver8 from "../assets/images/councilors/ver8.webp";
+import Ver9 from "../assets/images/councilors/ver9.webp";
 import Ver10 from "../assets/images/councilors/ver10.webp";
 import Ver11 from "../assets/images/councilors/ver11.webp";
 
-import BgUrl from "../assets/images/camara-bg.jpeg";
+import BgUrl from "../assets/images/camara-bg.webp";
 
 const Councilors = [
   { name: "Edvaldo Cordeiro", img: Ver1 },
