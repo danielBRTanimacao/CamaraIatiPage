@@ -104,7 +104,7 @@ export default () => {
               </a>
             </div>
             <h3 className="text-md font-semibold text-white mt-3">Feito por:</h3>
-            <p>Daniel Tenório</p>
+            <a href="https://www.instagram.com/danieltenorio35/">Daniel Tenório</a>
           </div>
         </div>
 

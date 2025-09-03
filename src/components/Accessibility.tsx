@@ -1,7 +1,7 @@
 export default () => {
   return (
     <button
-      className="cursor-pointer fixed top-4 right-4 z-50 rounded-full p-3 bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
+      className="cursor-pointer fixed top-4 left-4 z-50 rounded-full p-3 bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
       aria-label="Abrir opções de acessibilidade"
     >
       <img

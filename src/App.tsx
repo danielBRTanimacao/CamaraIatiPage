@@ -25,7 +25,7 @@ export default () => {
           onClick={() => setMenuOpen(!menuOpen)}
           className="cursor-pointer 
           absolute bottom-10 
-          left-1/25 -translate-x-1/2 mt-12 px-3
+          left-1/25 -translate-x-1/2 top-1 px-3
           rounded-lg transition-colors border 
           border-white/50 opacity-75 shadow-lg sm:hidden"
         >
