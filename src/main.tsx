@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import App from "./App";
 import Municipio from "./pages/landing/Municipio";
 import Camara from "./pages/landing/Camara";
+import CouncilorsPage from "./pages/landing/CouncilorsPage";
 
 const rootRoute = createRootRoute();
 
@@ -15,6 +16,11 @@ const routes = [
     getParentRoute: () => rootRoute,
     path: "/",
     component: App,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/vereadores",
+    component: CouncilorsPage,
   }),
   createRoute({
     getParentRoute: () => rootRoute,
