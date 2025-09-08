@@ -1,5 +1,8 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import FastNews from "../../components/ui/landing/FastNews";
+
+import Bandeira from "../../assets/images/bandeira.webp";
 
 export default () => {
   return (
@@ -25,7 +28,7 @@ export default () => {
           <article className="lg:w-3/4">
             <div className="md:float-left md:pe-5 mb-4 md:mb-2">
               <img
-                src="https://camaraiati.pe.gov.br/v1/wp-content/uploads/2021/05/Pe-iati-bandeira.jpg"
+                src={Bandeira}
                 alt="Bandeira de Iati"
                 className="w-full md:max-w-[300px] rounded-md shadow-md"
               />
@@ -95,30 +98,7 @@ export default () => {
               ></iframe>
             </div>
           </article>
-          <aside className="lg:w-1/4 mt-8 lg:mt-0">
-            <h3 className="text-xl font-bold mb-4">Notícias de Iati</h3>
-            <div className="bg-gray-100 p-4 rounded-md shadow-md mb-4">
-              <p className="font-semibold">Nova Praça Central é Inaugurada com Festa</p>
-              <p className="text-sm text-gray-600">
-                A cidade de Iati celebrou a inauguração da sua nova praça central, um espaço de
-                lazer e convivência para todos.
-              </p>
-            </div>
-            <div className="bg-gray-100 p-4 rounded-md shadow-md mb-4">
-              <p className="font-semibold">Festival de Cultura Local Atrai Turistas</p>
-              <p className="text-sm text-gray-600">
-                O primeiro festival cultural de Iati foi um sucesso, destacando as tradições e
-                talentos da região.
-              </p>
-            </div>
-            <div className="bg-gray-100 p-4 rounded-md shadow-md">
-              <p className="font-semibold">Investimento em Educação Traz Novas Escolas</p>
-              <p className="text-sm text-gray-600">
-                Duas novas escolas foram construídas em Iati, reforçando o compromisso com a
-                educação de qualidade.
-              </p>
-            </div>
-          </aside>
+          <FastNews />
         </section>
       </main>
       <Footer />

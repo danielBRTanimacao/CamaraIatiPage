@@ -6,6 +6,7 @@ import "./assets/css/Index.css";
 import NotFound from "./pages/NotFound";
 import App from "./App";
 import Municipio from "./pages/landing/Municipio";
+import Camara from "./pages/landing/Camara";
 
 const rootRoute = createRootRoute();
 
@@ -14,6 +15,11 @@ const routes = [
     getParentRoute: () => rootRoute,
     path: "/",
     component: App,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/camara",
+    component: Camara,
   }),
   createRoute({
     getParentRoute: () => rootRoute,

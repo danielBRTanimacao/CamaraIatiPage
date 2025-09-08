@@ -66,9 +66,9 @@ export default () => {
               </Link>
             </li>
             <li>
-              <a href="#camara" className="transition-all hover:text-xl">
+              <Link to="/camara" className="transition-all hover:text-xl">
                 A Câmara
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#legislação" className="transition-all hover:text-xl">
@@ -109,7 +109,7 @@ export default () => {
               image: IconMunicipio,
             },
             {
-              href: "#camara",
+              href: "/camara",
               label: "A Câmara",
               image: (
                 <svg
