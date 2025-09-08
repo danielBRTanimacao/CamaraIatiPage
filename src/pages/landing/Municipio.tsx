@@ -9,19 +9,20 @@ export default () => {
         <h1 className="py-5 text-2xl font-extrabold flex items-center gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
+            width="31"
+            height="31"
             fill="currentColor"
-            className="bi bi-calendar-week"
+            className="bi bi-patch-question"
             viewBox="0 0 16 16"
           >
-            <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
-            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+            <path d="M8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.7 1.7 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745" />
+            <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z" />
+            <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0" />
           </svg>
           <span>Sobre Iati - Pe</span>
         </h1>
-        <section className="pb-5 lg:flex">
-          <article>
+        <section className="pb-5 lg:flex lg:gap-8">
+          <article className="lg:w-3/4">
             <div className="md:float-left md:pe-5 mb-4 md:mb-2">
               <img
                 src="https://camaraiati.pe.gov.br/v1/wp-content/uploads/2021/05/Pe-iati-bandeira.jpg"
@@ -62,14 +63,14 @@ export default () => {
                 width="25"
                 height="25"
                 fill="currentColor"
-                className="bi bi-calendar-week"
+                className="bi bi-globe-americas"
                 viewBox="0 0 16 16"
               >
-                <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
-                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484q-.121.12-.242.234c-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
               </svg>
               <span>Geografia</span>
             </h2>
+
             <p>
               O município encontra-se inserido no Planalto da Borborema, com relevo suave e
               ondulado, próprio desta unidade. A vegetação nativa é composta por Florestas
@@ -82,8 +83,42 @@ export default () => {
               do Umbuzeiro, dos Porquinhos, do Sertão e Amaral Ferreira, todos de regime
               intermitente.
             </p>
+            <div className="w-full h-[450px] mb-8">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7880.471945780817!2d-36.851809358430394!3d-9.042226814078335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x707b16040b6eb6f%3A0x8c0d787d15d4dd53!2sIati%2C%20PE%2C%2055345-000!5e0!3m2!1spt-BR!2sbr!4v1757333951018!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: "0" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </article>
-          <aside>Menu lateral</aside>
+          <aside className="lg:w-1/4 mt-8 lg:mt-0">
+            <h3 className="text-xl font-bold mb-4">Notícias de Iati</h3>
+            <div className="bg-gray-100 p-4 rounded-md shadow-md mb-4">
+              <p className="font-semibold">Nova Praça Central é Inaugurada com Festa</p>
+              <p className="text-sm text-gray-600">
+                A cidade de Iati celebrou a inauguração da sua nova praça central, um espaço de
+                lazer e convivência para todos.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-md shadow-md mb-4">
+              <p className="font-semibold">Festival de Cultura Local Atrai Turistas</p>
+              <p className="text-sm text-gray-600">
+                O primeiro festival cultural de Iati foi um sucesso, destacando as tradições e
+                talentos da região.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-md shadow-md">
+              <p className="font-semibold">Investimento em Educação Traz Novas Escolas</p>
+              <p className="text-sm text-gray-600">
+                Duas novas escolas foram construídas em Iati, reforçando o compromisso com a
+                educação de qualidade.
+              </p>
+            </div>
+          </aside>
         </section>
       </main>
       <Footer />

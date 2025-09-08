@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import IconMunicipio from "../assets/svgs/icone-municipio.svg";
 import { useState } from "react";
 
@@ -60,9 +61,9 @@ export default () => {
           </button>
           <ul className="flex flex-col text-end gap-2 text-lg font-medium">
             <li>
-              <a href="#municipio" className="transition-all hover:text-xl">
+              <Link to="/municipio" className="transition-all hover:text-xl">
                 Municipio
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#camara" className="transition-all hover:text-xl">
@@ -102,7 +103,7 @@ export default () => {
         <ul className="container flex justify-between items-center text-lg font-bold text-white">
           {[
             {
-              href: "#municipio",
+              href: "/municipio",
               label: "Municipio",
               extra: "hidden md:block",
               image: IconMunicipio,
