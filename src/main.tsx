@@ -3,13 +3,11 @@ import { createRootRoute, createRoute, createRouter, RouterProvider } from "@tan
 
 import "./assets/css/Index.css";
 
-import NotFound from "./pages/NotFound.tsx";
-import App from "./App.tsx";
-import Municipio from "./pages/landing/Municipio.tsx";
+import NotFound from "./pages/NotFound";
+import App from "./App";
+import Municipio from "./pages/landing/Municipio";
 
-const rootRoute = createRootRoute({
-  notFoundComponent: NotFound,
-});
+const rootRoute = createRootRoute();
 
 const routes = [
   createRoute({
@@ -21,6 +19,11 @@ const routes = [
     getParentRoute: () => rootRoute,
     path: "/municipio",
     component: Municipio,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: "*",
+    component: NotFound,
   }),
 ];
 
