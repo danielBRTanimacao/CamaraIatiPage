@@ -76,9 +76,9 @@ export default () => {
               </a>
             </li>
             <li>
-              <a href="#vereadores" className="transition-all hover:text-xl">
+              <Link to="/vereadores" className="transition-all hover:text-xl">
                 Vereadores
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#transparencia" className="transition-all hover:text-xl">
@@ -143,7 +143,7 @@ export default () => {
               ),
             },
             {
-              href: "#vereadores",
+              href: "/vereadores",
               label: "Vereadores",
               extra: "hidden lg:block",
               image: (
