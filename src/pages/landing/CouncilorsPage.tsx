@@ -32,14 +32,18 @@ export default () => {
     <>
       <Header />
       <main className="container">
-        <article className="bg-gray-200 p-2 flex gap-5 my-5">
+        <article className="bg-gray-200 p-5 flex gap-5 my-5 rounded-md">
           {Councilors.map((councilor, key) => (
             <a
               key={key}
               href="#nomeOuIdDoVereador"
-              className="hover:scale-125 transition-all ease-in-out"
+              className="hover:scale-105 transition-all ease-in-out text-center"
             >
-              <img src={councilor.img} alt="img-vereador" className="w-25" />
+              <img
+                src={councilor.img}
+                alt="img-vereador"
+                className="w-28 h-40 object-cover rounded-sm mx-auto"
+              />
               <span>{councilor.name}</span>
             </a>
           ))}
