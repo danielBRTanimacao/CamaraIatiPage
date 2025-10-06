@@ -8,7 +8,7 @@ import App from "./App";
 import Municipio from "./pages/landing/Municipio";
 import Camara from "./pages/landing/Camara";
 import CouncilorsPage from "./pages/landing/CouncilorsPage";
-import HomeConcilior from "./pages/personal/HomeConcilior";
+//import HomeConcilior from "./pages/personal/HomeConcilior";
 
 const rootRoute = createRootRoute();
 
