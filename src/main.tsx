@@ -8,7 +8,6 @@ import App from "./App";
 import Municipio from "./pages/landing/Municipio";
 import Camara from "./pages/landing/Camara";
 import CouncilorsPage from "./pages/landing/CouncilorsPage";
-import HomeConcilior from "./pages/personal/HomeConcilior";
 
 const rootRoute = createRootRoute();
 
@@ -17,11 +16,6 @@ const routes = [
     getParentRoute: () => rootRoute,
     path: "/",
     component: App,
-  }),
-  createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/vereador/:councilorId",
-    component: HomeConcilior,
   }),
   createRoute({
     getParentRoute: () => rootRoute,
