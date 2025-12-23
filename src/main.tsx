@@ -12,31 +12,31 @@ import CouncilorsPage from "./pages/landing/CouncilorsPage";
 const rootRoute = createRootRoute();
 
 const routes = [
-  createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/",
-    component: App,
-  }),
-  createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/vereadores",
-    component: CouncilorsPage,
-  }),
-  createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/camara",
-    component: Camara,
-  }),
-  createRoute({
-    getParentRoute: () => rootRoute,
-    path: "/municipio",
-    component: Municipio,
-  }),
-  createRoute({
-    getParentRoute: () => rootRoute,
-    path: "*",
-    component: NotFound,
-  }),
+    createRoute({
+        getParentRoute: () => rootRoute,
+        path: "/",
+        component: App,
+    }),
+    createRoute({
+        getParentRoute: () => rootRoute,
+        path: "/vereadores",
+        component: CouncilorsPage,
+    }),
+    createRoute({
+        getParentRoute: () => rootRoute,
+        path: "/camara",
+        component: Camara,
+    }),
+    createRoute({
+        getParentRoute: () => rootRoute,
+        path: "/municipio",
+        component: Municipio,
+    }),
+    createRoute({
+        getParentRoute: () => rootRoute,
+        path: "*",
+        component: NotFound,
+    }),
 ];
 
 const routeTree = rootRoute.addChildren(routes);
