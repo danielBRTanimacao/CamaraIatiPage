@@ -2,91 +2,100 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
-import Ver1 from "../assets/images/councilors/ver1.webp";
-import Ver2 from "../assets/images/councilors/ver2.webp";
-import Ver3 from "../assets/images/councilors/ver3.webp";
-import Ver4 from "../assets/images/councilors/ver4.webp";
-import Ver5 from "../assets/images/councilors/ver5.webp";
-import Ver6 from "../assets/images/councilors/ver6.webp";
-import Ver7 from "../assets/images/councilors/ver7.webp";
-import Ver8 from "../assets/images/councilors/ver8.webp";
-import Ver9 from "../assets/images/councilors/ver9.webp";
-import Ver10 from "../assets/images/councilors/ver10.webp";
-import Ver11 from "../assets/images/councilors/ver11.webp";
-
 import BgUrl from "../assets/images/camara-bg.webp";
+import { useEffect, useState } from "react";
 
-const Councilors = [
-  { name: "Edvaldo Cordeiro", img: Ver1 },
-  { name: "Jose Cicero", img: Ver2 },
-  { name: "Antonio Texeira", img: Ver3 },
-  { name: "Erlan Tenório", img: Ver4 },
-  { name: "Cicero Pereira", img: Ver5 },
-  { name: "Taciano Mota", img: Ver6 },
-  { name: "Everaldo Pereira", img: Ver7 },
-  { name: "Joselio Terezino", img: Ver8 },
-  { name: "Renato Almeida", img: Ver9 },
-  { name: "Rodrigo Ferreira", img: Ver10 },
-  { name: "Arthur Tavares", img: Ver11 },
-];
+interface Councilor {
+    id: number;
+    nome_parlamentar: string;
+    fotografia: string;
+    partido: string;
+}
 
 export default () => {
-  return (
-    <section
-      className="bg-amber-300 h-150 mt-10 py-30 bg-no-repeat bg-center bg-cover"
-      style={{
-        backgroundImage: `url(${BgUrl})`,
-      }}
-    >
-      <div className="container">
-        <h3 className="text-3xl text-center text-white font-extrabold pb-3">VEREADORES</h3>
+    const [councilors, setCouncilors] = useState<Councilor[]>([]);
+    const [loading, setLoading] = useState(true);
 
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
-          loop={true}
-          spaceBetween={20}
-          className="rounded-lg overflow-visible swiper-with-padding"
-          pagination={{ clickable: true }}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              centeredSlides: true,
-            },
-            640: {
-              slidesPerView: 2,
-              centeredSlides: true,
-            },
-            1024: {
-              slidesPerView: 3,
-              centeredSlides: true,
-            },
-            1280: {
-              slidesPerView: 5,
-              centeredSlides: true,
-            },
-          }}
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(
+                    "http://103.199.185.123:8084/api/parlamentares/legislatura/1/parlamentares/?get_all=true"
+                );
+                if (!response.ok) throw new Error("Falha ao buscar dados");
+                const data = await response.json();
+                setCouncilors(data);
+            } catch (error) {
+                console.error("Erro ao carregar vereadores:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) return <div className="text-center py-10">Carregando vereadores...</div>;
+
+    return (
+        <section
+            className="bg-amber-300 h-150 mt-10 py-30 bg-no-repeat bg-center bg-cover"
+            style={{
+                backgroundImage: `url(${BgUrl})`,
+            }}
         >
-          {Councilors.map((councilor, index) => (
-            <SwiperSlide key={index} className="flex items-center justify-center">
-              <a
-                href="#"
-                className="block flex items-center justify-center transform transition-transform duration-500 hover:scale-110 mx-auto"
-              >
-                <div
-                  className="flex items-end text-white font-bold h-80 w-55 rounded-xl bg-center bg-cover shadow-lg"
-                  style={{ backgroundImage: `url(${councilor.img})` }}
+            <div className="container">
+                <h3 className="text-3xl text-center text-white font-extrabold pb-3">VEREADORES</h3>
+
+                <Swiper
+                    modules={[Autoplay, Pagination]}
+                    autoplay={{ delay: 2000, disableOnInteraction: false }}
+                    loop={true}
+                    spaceBetween={20}
+                    className="rounded-lg overflow-visible swiper-with-padding"
+                    pagination={{ clickable: true }}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            centeredSlides: true,
+                        },
+                        640: {
+                            slidesPerView: 2,
+                            centeredSlides: true,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            centeredSlides: true,
+                        },
+                        1280: {
+                            slidesPerView: 5,
+                            centeredSlides: true,
+                        },
+                    }}
                 >
-                  <aside className="p-3 text-shadow-lg rounded-md bg-black/40 w-full text-center">
-                    <p>{councilor.name}</p>
-                    <p className="text-sm font-normal">Partido dele</p>
-                  </aside>
-                </div>
-              </a>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
-  );
+                    {councilors.map((councilor) => (
+                        <SwiperSlide
+                            key={councilor.id}
+                            className="flex items-center justify-center"
+                        >
+                            <a
+                                href={`http://103.199.185.123:8084/parlamentar/${councilor.id}`}
+                                className="block flex items-center justify-center transform transition-transform duration-500 hover:scale-110 mx-auto"
+                            >
+                                <div
+                                    className="flex items-end text-white font-bold h-80 w-55 rounded-xl bg-center bg-cover shadow-lg"
+                                    style={{ backgroundImage: `url(${councilor.fotografia})` }}
+                                >
+                                    <aside className="p-3 text-shadow-lg rounded-b-md bg-black/40 w-full text-center">
+                                        <p>{councilor.nome_parlamentar}</p>
+                                        <p className="text-sm font-normal">{councilor.partido}</p>
+                                    </aside>
+                                </div>
+                            </a>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+        </section>
+    );
 };
