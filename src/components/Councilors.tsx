@@ -21,14 +21,16 @@ export default () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    "http://103.199.185.123:8084/api/parlamentares/legislatura/1/parlamentares/?get_all=true"
+                    `${
+                        import.meta.env.VITE_API_URL
+                    }/parlamentares/legislatura/1/parlamentares/?get_all=true`
                 );
                 if (!response.ok) throw new Error("Falha ao buscar dados");
                 const data = await response.json();
                 setCouncilors(data);
                 setErrorLoad("");
             } catch (error) {
-                setErrorLoad("Erro ao carregar vereadores");
+                setErrorLoad("Erro ao carregar pagina de vereadores");
                 console.error("Erro ao carregar vereadores:", error);
             } finally {
                 setLoading(false);
