@@ -14,6 +14,7 @@ interface Councilor {
 
 export default () => {
     const [councilors, setCouncilors] = useState<Councilor[]>([]);
+    const [errorLoad, setErrorLoad] = useState("");
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -25,7 +26,9 @@ export default () => {
                 if (!response.ok) throw new Error("Falha ao buscar dados");
                 const data = await response.json();
                 setCouncilors(data);
+                setErrorLoad("");
             } catch (error) {
+                setErrorLoad("Erro ao carregar vereadores");
                 console.error("Erro ao carregar vereadores:", error);
             } finally {
                 setLoading(false);
@@ -36,6 +39,7 @@ export default () => {
     }, []);
 
     if (loading) return <div className="text-center py-10">Carregando vereadores...</div>;
+    if (errorLoad) return <div className="text-center py-10">{errorLoad}</div>;
 
     return (
         <section
