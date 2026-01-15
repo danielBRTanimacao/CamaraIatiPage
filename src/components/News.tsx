@@ -10,6 +10,8 @@ import NewImage5 from "../assets/images/events/pista.webp";
 import NewImage6 from "../assets/images/events/barragem.webp";
 import NewImage7 from "../assets/images/news/news3.webp";
 
+//import instaOficial from "../assets/images/news/instaOficial.png";
+
 export default () => {
     const images = [NewImage3, NewImage, NewImage2];
 
@@ -79,7 +81,7 @@ export default () => {
                 <a
                     target="_blank"
                     href="https://www.instagram.com/camaradeiati/"
-                    className="block h-40 w-full rounded-lg bg-[url(https://passagenspromo.com.br/blog/wp-content/uploads/2019/06/pontos-turisticos-de-pernambuco-recife.jpg)] bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
+                    className={`block h-40 w-full rounded-lg bg-[url(/src/assets/images/news/instaOficial.png)] bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105`}
                 ></a>
                 <a
                     href="#"
