@@ -13,6 +13,11 @@ interface Councilor {
 }
 
 export default () => {
+    const formatUrl = (url: string) => {
+        if (!url) return "";
+        return url.replace("http://103.199.185.123", "/media-proxy");
+    };
+
     const [councilors, setCouncilors] = useState<Councilor[]>([]);
     const [errorLoad, setErrorLoad] = useState("");
     const [loading, setLoading] = useState(true);
@@ -90,7 +95,9 @@ export default () => {
                             >
                                 <div
                                     className="flex items-end text-white font-bold h-80 w-55 rounded-xl bg-center bg-cover shadow-lg"
-                                    style={{ backgroundImage: `url(${councilor.fotografia})` }}
+                                    style={{
+                                        backgroundImage: `url(${formatUrl(councilor.fotografia)})`,
+                                    }}
                                 >
                                     <aside className="p-3 text-shadow-lg rounded-b-md bg-black/40 w-full text-center">
                                         <p>{councilor.nome_parlamentar}</p>
