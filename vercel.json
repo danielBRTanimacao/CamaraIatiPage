@@ -1,8 +1,12 @@
 {
     "rewrites": [
         {
-            "source": "/api-proxy/(.*)",
-            "destination": "http://103.199.185.123:8084/api/$1"
+            "source": "/proxy-geral/:path*",
+            "destination": "http://103.199.185.123:8084/:path*"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/"
         }
     ]
 }
