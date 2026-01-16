@@ -3,14 +3,6 @@
         {
             "source": "/api-proxy/(.*)",
             "destination": "http://103.199.185.123:8084/api/$1"
-        },
-        {
-            "source": "/media-proxy/(.*)",
-            "destination": "http://103.199.185.123:8084/$1"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/"
         }
     ]
 }
