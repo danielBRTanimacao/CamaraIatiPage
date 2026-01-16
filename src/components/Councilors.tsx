@@ -15,7 +15,7 @@ interface Councilor {
 export default () => {
     const formatImgUrl = (url: string) => {
         if (!url) return "";
-        return url.replace("http://103.199.185.123", "/media-proxy");
+        return url.replace("http://103.199.185.123", "/api-proxy");
     };
 
     const [councilors, setCouncilors] = useState<Councilor[]>([]);
