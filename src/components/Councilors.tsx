@@ -26,9 +26,7 @@ export default () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `${
-                        import.meta.env.VITE_API_URL
-                    }/parlamentares/legislatura/1/parlamentares/?get_all=true`
+                    `${import.meta.env.VITE_API_URL}/parlamentares/legislatura/1/parlamentares/?get_all=true`
                 );
                 if (!response.ok) throw new Error("Falha ao buscar dados");
                 const data = await response.json();
