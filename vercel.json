@@ -9,7 +9,7 @@
             "destination": "http://103.199.185.123/:path*"
         },
         {
-            "source": "/(.*)",
+            "source": "/((?!api-proxy|media-proxy).*)",
             "destination": "/"
         }
     ]
