@@ -15,9 +15,19 @@ interface Councilor {
 export default () => {
     const formatImgUrl = (url: string) => {
         if (!url) return "";
-        let path = url.replace("http://103.199.185.123:8084", "");
-        path = path.replace(/^\/+/, "/");
-        return `/media-proxy${path}`;
+
+        if (url.startsWith("/") && !url.includes("://")) {
+            return `/media-proxy${url}`;
+        }
+
+        try {
+            const urlObj = new URL(url);
+            return `/media-proxy${urlObj.pathname}${urlObj.search}`;
+        } catch (e) {
+            let path = url.replace(/^(?:https?:\/\/)?103\.199\.185\.123(?::\d+)?/, "");
+            path = path.startsWith("/") ? path : `/${path}`;
+            return `/media-proxy${path}`;
+        }
     };
 
     const [councilors, setCouncilors] = useState<Councilor[]>([]);
