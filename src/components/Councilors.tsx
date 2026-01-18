@@ -15,7 +15,9 @@ interface Councilor {
 export default () => {
     const formatImgUrl = (url: string) => {
         if (!url) return "";
-        return url.replace("http://103.199.185.123:8084", "/media-proxy");
+        let path = url.replace("http://103.199.185.123:8084", "");
+        path = path.replace(/^\/+/, "/");
+        return `/media-proxy${path}`;
     };
 
     const [councilors, setCouncilors] = useState<Councilor[]>([]);
@@ -82,9 +84,9 @@ export default () => {
                         },
                     }}
                 >
-                    {councilors.map((councilor) => (
+                    {councilors.map((councilor, index) => (
                         <SwiperSlide
-                            key={councilor.id}
+                            key={`${councilor.id}-${index}`}
                             className="flex items-center justify-center"
                         >
                             <a
