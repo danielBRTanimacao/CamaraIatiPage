@@ -9,6 +9,11 @@ export default () => {
                         <h3 className="text-lg font-semibold text-white mb-4">Links Rápidos</h3>
                         <ul className="space-y-2">
                             <li>
+                                <Link to="/" className="hover:text-white transition duration-300">
+                                    Inicio
+                                </Link>
+                            </li>
+                            <li>
                                 <Link to="#" className="hover:text-white transition duration-300">
                                     Agenda Oficial
                                 </Link>
@@ -81,7 +86,7 @@ export default () => {
                         <ul className="space-y-2">
                             <li>
                                 <Link to="#" className="hover:text-white transition duration-300">
-                                    Email: contato@suaempresa.com
+                                    Email: contato@empresa.com
                                 </Link>
                             </li>
                             <li>
@@ -112,7 +117,7 @@ export default () => {
                             </Link>
                         </div>
                         <h3 className="text-md font-semibold text-white mt-3">Feito por:</h3>
-                        <Link to="https://www.instagram.com/danieltenorio35/">Daniel Tenório</Link>
+                        <Link to="#">ClimAr</Link>
                     </div>
                 </div>
 

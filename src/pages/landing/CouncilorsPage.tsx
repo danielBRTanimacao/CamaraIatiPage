@@ -1,55 +1,106 @@
 import Header from "../../components/Header";
-
-import Ver1 from "../../assets/images/councilors/ver1.webp";
-import Ver2 from "../../assets/images/councilors/ver2.webp";
-import Ver3 from "../../assets/images/councilors/ver3.webp";
-import Ver4 from "../../assets/images/councilors/ver4.webp";
-import Ver5 from "../../assets/images/councilors/ver5.webp";
-import Ver6 from "../../assets/images/councilors/ver6.webp";
-import Ver7 from "../../assets/images/councilors/ver7.webp";
-import Ver8 from "../../assets/images/councilors/ver8.webp";
-import Ver9 from "../../assets/images/councilors/ver9.webp";
-import Ver10 from "../../assets/images/councilors/ver10.webp";
-import Ver11 from "../../assets/images/councilors/ver11.webp";
 import Footer from "../../components/Footer";
+import { useEffect, useState } from "react";
 
-const Councilors = [
-  { name: "Edvaldo Cordeiro", img: Ver1 },
-  { name: "Jose Cicero", img: Ver2 },
-  { name: "Antonio Texeira", img: Ver3 },
-  { name: "Erlan Tenório", img: Ver4 },
-  { name: "Cicero Pereira", img: Ver5 },
-  { name: "Taciano Mota", img: Ver6 },
-  { name: "Everaldo Pereira", img: Ver7 },
-  { name: "Joselio Terezino", img: Ver8 },
-  { name: "Renato Almeida", img: Ver9 },
-  { name: "Rodrigo Ferreira", img: Ver10 },
-  { name: "Arthur Tavares", img: Ver11 },
-];
+interface Councilor {
+    id: number;
+    nome_parlamentar: string;
+    fotografia: string;
+    partido: string;
+}
 
 export default () => {
-  return (
-    <>
-      <Header />
-      <main className="container">
-        <article className="bg-gray-200 p-5 flex gap-5 my-5 rounded-md">
-          {Councilors.map((councilor, key) => (
-            <a
-              key={key}
-              href="#nomeOuIdDoVereador"
-              className="hover:scale-105 transition-all ease-in-out text-center"
-            >
-              <img
-                src={councilor.img}
-                alt="img-vereador"
-                className="w-28 h-40 object-cover rounded-sm mx-auto"
-              />
-              <span>{councilor.name}</span>
-            </a>
-          ))}
-        </article>
-      </main>
-      <Footer />
-    </>
-  );
+    const formatImgUrl = (url: string) => {
+        if (!url) return "https://via.placeholder.com/150x200?text=Sem+Foto";
+        if (url.startsWith("/") && !url.includes("://")) return `/media-proxy${url}`;
+
+        try {
+            const urlObj = new URL(url);
+            return `/media-proxy${urlObj.pathname}${urlObj.search}`;
+        } catch (e) {
+            let path = url.replace(/^(?:https?:\/\/)?103\.199\.185\.123(?::\d+)?/, "");
+            path = path.startsWith("/") ? path : `/${path}`;
+            return `/media-proxy${path}`;
+        }
+    };
+
+    const [councilors, setCouncilors] = useState<Councilor[]>([]);
+    const [errorLoad, setErrorLoad] = useState("");
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(
+                    `${import.meta.env.VITE_API_URL}/parlamentares/legislatura/1/parlamentares/?get_all=true`
+                );
+                if (!response.ok) throw new Error("Falha ao buscar dados");
+                const data = await response.json();
+                setCouncilors(data);
+                setErrorLoad("");
+            } catch (error) {
+                setErrorLoad("Erro ao carregar os vereadores. Tente novamente mais tarde.");
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+
+    return (
+        <div className="flex flex-col min-h-screen">
+            <Header />
+
+            <main className="flex-grow container mx-auto px-4 py-10">
+                <header className="mb-10 text-center">
+                    <h1 className="text-4xl font-black text-gray-800 uppercase tracking-tighter">
+                        Nossos Vereadores
+                    </h1>
+                    <div className="w-24 h-1 bg-amber-400 mx-auto mt-2"></div>
+                </header>
+
+                {loading ? (
+                    <div className="flex justify-center items-center h-64">
+                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-amber-500"></div>
+                    </div>
+                ) : errorLoad ? (
+                    <div className="bg-red-100 text-red-700 p-4 rounded-lg text-center font-bold">
+                        {errorLoad}
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                        {councilors.map((councilor) => (
+                            <a
+                                key={councilor.id}
+                                href={`http://103.199.185.123:8084/parlamentar/${councilor.id}`}
+                                className="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                            >
+                                <div className="aspect-[3/4] overflow-hidden bg-gray-200">
+                                    <img
+                                        src={formatImgUrl(councilor.fotografia)}
+                                        alt={councilor.nome_parlamentar}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        onError={(e) =>
+                                            (e.currentTarget.src =
+                                                "https://via.placeholder.com/150x200?text=Erro+Imagem")
+                                        }
+                                    />
+                                </div>
+                                <div className="p-4 text-center">
+                                    <h2 className="font-bold text-gray-800 text-sm md:text-base line-clamp-1 group-hover:text-amber-600 transition-colors">
+                                        {councilor.nome_parlamentar}
+                                    </h2>
+                                    <p className="text-xs text-gray-500 font-medium mt-1 uppercase">
+                                        {councilor.partido}
+                                    </p>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                )}
+            </main>
+
+            <Footer />
+        </div>
+    );
 };
