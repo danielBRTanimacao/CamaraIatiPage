@@ -86,7 +86,7 @@ export default () => {
                         <ul className="space-y-2">
                             <li>
                                 <Link to="#" className="hover:text-white transition duration-300">
-                                    Email: contato@empresa.com
+                                    Email: contato@camaraiati.pe.gov.br
                                 </Link>
                             </li>
                             <li>
