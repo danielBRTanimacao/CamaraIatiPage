@@ -79,10 +79,7 @@ export default () => {
 
                     <div>
                         <h3 className="text-lg font-semibold text-white mb-4">Contato</h3>
-                        <p className="text-sm">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum enim ex
-                            aliquid fugit numquam ab?
-                        </p>
+                        <p className="text-sm">CÂMARA DE VEREADORES DE IATI</p>
                         <ul className="space-y-2">
                             <li>
                                 <Link to="#" className="hover:text-white transition duration-300">
