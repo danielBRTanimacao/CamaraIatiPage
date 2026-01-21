@@ -91,7 +91,7 @@ export default () => {
                             </li>
                             <li>
                                 <Link to="#" className="hover:text-white transition duration-300">
-                                    Telefone: (99) 99999-9999
+                                    Telefone: (87) 98149-3436
                                 </Link>
                             </li>
                             <li>
