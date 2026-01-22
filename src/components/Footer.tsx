@@ -14,27 +14,18 @@ export default () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
-                                    Agenda Oficial
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
-                                    Atlas das reuniões
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
-                                    Pautas das reuniões
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
+                                <Link
+                                    to="http://162.214.186.142:16444/transparencia/iati/camara/"
+                                    className="hover:text-white transition duration-300"
+                                >
                                     Requerimentos
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
+                                <Link
+                                    to="/vereadores"
+                                    className="hover:text-white transition duration-300"
+                                >
                                     Vereadores
                                 </Link>
                             </li>
@@ -49,21 +40,6 @@ export default () => {
                                     className="hover:text-white transition duration-300"
                                 >
                                     e-SIC
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
-                                    Glossário
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
-                                    Perguntas frequentes
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
-                                    Mapa do site
                                 </Link>
                             </li>
                             <li>
@@ -82,17 +58,30 @@ export default () => {
                         <p className="text-sm">CÂMARA DE VEREADORES DE IATI</p>
                         <ul className="space-y-2">
                             <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
+                                <Link
+                                    to="mailto:contato@camaraiati.pe.gov.br"
+                                    className="hover:text-white transition duration-300"
+                                >
                                     Email: contato@camaraiati.pe.gov.br
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
+                                <Link
+                                    to="https://wa.me/5587981493436"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-white transition duration-300"
+                                >
                                     Telefone: (87) 98149-3436
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="hover:text-white transition duration-300">
+                                <Link
+                                    to="https://www.google.com/maps/search/?api=1&query=R.+Padre+Nelson+B+Carvalho,+Iati+-+PE"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-white transition duration-300"
+                                >
                                     Endereço: R. Padre Nelson B Carvalho
                                 </Link>
                             </li>
@@ -102,14 +91,19 @@ export default () => {
                     <div>
                         <h3 className="text-lg font-semibold text-white mb-4">Siga-nos</h3>
                         <div className="flex space-x-4">
-                            <Link to="#" className="hover:text-white transition duration-300">
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 16h-2v-6h2v6zm6 0h-2v-6h2v6zm-4-11a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
-                                </svg>
-                            </Link>
-                            <Link to="#" className="hover:text-white transition duration-300">
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M22.46 6c-.77.34-1.6.57-2.46.66.89-.54 1.58-1.39 1.9-2.4-.84.5-1.78.86-2.77 1.05-.79-.84-1.92-1.37-3.17-1.37-2.4 0-4.35 1.95-4.35 4.35 0 .34.04.67.11.99-3.62-.18-6.84-1.92-8.99-4.54-.37.64-.58 1.38-.58 2.16 0 1.51.77 2.84 1.94 3.61-.71 0-1.38-.21-1.96-.54v.05c0 2.1 1.49 3.86 3.47 4.25-.36.1-.73.15-1.11.15-.27 0-.53-.03-.79-.08.55 1.72 2.14 2.98 4.02 3.01-1.48 1.16-3.35 1.86-5.38 1.86-.35 0-.69-.02-1.03-.06 1.92 1.23 4.19 1.95 6.64 1.95 8 0 12.3-6.62 12.3-12.3 0-.19-.01-.38-.01-.57.85-.61 1.59-1.38 2.18-2.26z" />
+                            <Link
+                                to="https://www.instagram.com/camaradeiati/"
+                                className="hover:text-white transition duration-300"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    fill="currentColor"
+                                    className="bi bi-instagram"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
                                 </svg>
                             </Link>
                         </div>
