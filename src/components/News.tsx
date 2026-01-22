@@ -2,15 +2,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
-import NewImage from "../assets/images/news/newsImage.png";
-import NewImage2 from "../assets/images/news/newImage2.png";
+import NewImage from "../assets/images/news/newImage.webp";
+import NewImage2 from "../assets/images/news/newImage2.webp";
 import NewImage3 from "../assets/images/events/event2.webp";
-import NewImage4 from "../assets/images/events/reunion.png";
+import NewImage4 from "../assets/images/events/reunion.webp";
 import NewImage5 from "../assets/images/events/pista.webp";
 import NewImage6 from "../assets/images/events/barragem.webp";
 import NewImage7 from "../assets/images/news/news3.webp";
 
-//import instaOficial from "../assets/images/news/instaOficial.png";
+import instaOficial from "../assets/images/news/instaOficial.webp";
 
 export default () => {
     const images = [NewImage3, NewImage, NewImage2];
@@ -81,7 +81,8 @@ export default () => {
                 <a
                     target="_blank"
                     href="https://www.instagram.com/camaradeiati/"
-                    className={`block h-40 w-full rounded-lg bg-[url(/src/assets/images/news/instaOficial.png)] bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105`}
+                    style={{ backgroundImage: `url(${instaOficial})` }}
+                    className={`block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105`}
                 ></a>
                 <a
                     href="#"
