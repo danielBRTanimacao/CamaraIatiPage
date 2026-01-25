@@ -4,6 +4,9 @@ import { useState } from "react";
 
 export default () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const pageLegislation =
+        "http://162.214.186.142:16444/transparencia/iati/camara/legislacaomunicipal.faces";
+
     return (
         <>
             <header
@@ -73,10 +76,7 @@ export default () => {
                             </Link>
                         </li>
                         <li>
-                            <Link
-                                to="http://162.214.186.142:16444/transparencia/iati/camara/legislacaomunicipal.faces"
-                                className="transition-all hover:text-xl"
-                            >
+                            <Link to={pageLegislation} className="transition-all hover:text-xl">
                                 Legislação
                             </Link>
                         </li>
@@ -141,7 +141,7 @@ export default () => {
                             ),
                         },
                         {
-                            href: "http://162.214.186.142:16444/transparencia/iati/camara/legislacaomunicipal.faces",
+                            href: pageLegislation,
                             label: "Legislação",
                             image: (
                                 <svg
