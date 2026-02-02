@@ -15,7 +15,7 @@ import IconMunicipio from "../assets/svgs/icone-municipio.svg";
 export default () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const pageLegislation =
-        "http://162.214.186.142:16444/transparencia/iati/camara/legislacaomunicipal.faces";
+        "https://tecnosolutions.inf.br/transparencia/iati/camara/legislacaomunicipal.faces";
 
     const CustomLink = ({ item, children }: { item: any; children: React.ReactNode }) => {
         const isExternal = item.href.startsWith("http");
@@ -87,13 +87,13 @@ export default () => {
                             </Link>
                         </li>
                         <li>
-                            <a href="http://162.214.186.142:16444/transparencia/iati/camara/">
+                            <a href="https://tecnosolutions.inf.br/transparencia/iati/camara/">
                                 Transparência
                             </a>
                         </li>
                         <li>
                             <a
-                                href="http://162.214.186.142:16444/transparencia/iati/camara/esic.faces"
+                                href="https://tecnosolutions.inf.br/transparencia/iati/camara/esic.faces"
                                 className="transition-all hover:text-xl"
                             >
                                 e-SIC
