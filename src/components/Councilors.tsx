@@ -13,23 +13,6 @@ interface Councilor {
 }
 
 export default () => {
-    const formatImgUrl = (url: string) => {
-        if (!url) return "";
-
-        if (url.startsWith("/") && !url.includes("://")) {
-            return `/media-proxy${url}`;
-        }
-
-        try {
-            const urlObj = new URL(url);
-            return `/media-proxy${urlObj.pathname}${urlObj.search}`;
-        } catch (e) {
-            let path = url.replace(/^(?:https?:\/\/)?103\.199\.185\.123(?::\d+)?/, "");
-            path = path.startsWith("/") ? path : `/${path}`;
-            return `/media-proxy${path}`;
-        }
-    };
-
     const [councilors, setCouncilors] = useState<Councilor[]>([]);
     const [errorLoad, setErrorLoad] = useState("");
     const [loading, setLoading] = useState(true);
@@ -106,7 +89,7 @@ export default () => {
                                 <div
                                     className="flex items-end text-white font-bold h-80 w-55 rounded-xl bg-center bg-cover shadow-lg"
                                     style={{
-                                        backgroundImage: `url(${formatImgUrl(councilor.fotografia)})`,
+                                        backgroundImage: `url(${councilor.fotografia})`,
                                     }}
                                 >
                                     <aside className="p-3 text-shadow-lg rounded-b-md bg-black/40 w-full text-center">

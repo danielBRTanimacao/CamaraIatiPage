@@ -10,20 +10,6 @@ interface Councilor {
 }
 
 export default () => {
-    const formatImgUrl = (url: string) => {
-        if (!url) return "https://via.placeholder.com/150x200?text=Sem+Foto";
-        if (url.startsWith("/") && !url.includes("://")) return `/media-proxy${url}`;
-
-        try {
-            const urlObj = new URL(url);
-            return `/media-proxy${urlObj.pathname}${urlObj.search}`;
-        } catch (e) {
-            let path = url.replace(/^(?:https?:\/\/)?103\.199\.185\.123(?::\d+)?/, "");
-            path = path.startsWith("/") ? path : `/${path}`;
-            return `/media-proxy${path}`;
-        }
-    };
-
     const [councilors, setCouncilors] = useState<Councilor[]>([]);
     const [errorLoad, setErrorLoad] = useState("");
     const [loading, setLoading] = useState(true);
@@ -77,7 +63,7 @@ export default () => {
                             >
                                 <div className="aspect-[3/4] overflow-hidden bg-gray-200">
                                     <img
-                                        src={formatImgUrl(councilor.fotografia)}
+                                        src={councilor.fotografia}
                                         alt={councilor.nome_parlamentar}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         onError={(e) =>
