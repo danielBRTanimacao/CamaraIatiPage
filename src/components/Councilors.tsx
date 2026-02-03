@@ -21,7 +21,7 @@ export default () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/parlamentares/legislatura/1/parlamentars/?get_all=true`,
+          `${import.meta.env.VITE_API_URL}/parlamentares/legislatura/1/parlamentares/?get_all=true`,
         );
         if (!response.ok) throw new Error('Falha ao buscar dados');
         const data = await response.json();
@@ -38,7 +38,12 @@ export default () => {
     fetchData();
   }, []);
 
-  if (loading) return <div className="text-center py-10">Carregando vereadores...</div>;
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-amber-500"></div>
+      </div>
+    );
   if (errorLoad)
     return (
       <div className=" text-red-700 flex p-8 items-center justify-center font-bold">
