@@ -100,6 +100,7 @@ export default () => {
           className={`block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105`}
         ></a>
         <a
+          target="_blank"
           href="https://tecnosolutions.inf.br/transparencia/iati/camara/"
           style={{ backgroundImage: `url(${transparentOficial})` }}
           className="block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
