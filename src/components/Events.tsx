@@ -6,6 +6,7 @@ export default () => {
     {
       day: '29',
       month: 'Agosto',
+      time: '11:00 - 12:00',
       title: '10° reunião ordinária do terceiro período legislativo',
       adress: 'R. Padre Nelson B Carvalho',
       img: EventPhoto,
@@ -13,6 +14,7 @@ export default () => {
     {
       day: '09',
       month: 'Janeiro',
+      time: '9:00 - 11:00',
       title: 'Inauguração do ano legislativo de 2026',
       adress: 'R. Padre Nelson B Carvalho',
       img: EventPhoto,
@@ -47,7 +49,7 @@ export default () => {
               <div className="p-3">
                 <h3 className="text-xl font-extrabold">{item.title}</h3>
                 <p className="pt-2">
-                  <strong>Horario:</strong> 11:00 - 12:00
+                  <strong>Horario:</strong> {item.time}
                 </p>
                 <p className="pb-4">
                   <strong>Local:</strong> {item.adress}
