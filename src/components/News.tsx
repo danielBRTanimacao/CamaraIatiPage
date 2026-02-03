@@ -2,9 +2,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
-import NewImage from '../assets/images/news/newImage.webp';
-import NewImage2 from '../assets/images/news/newImage2.webp';
-import NewImage3 from '../assets/images/events/event2.webp';
 import NewImage4 from '../assets/images/events/reunion.webp';
 import NewImage5 from '../assets/images/events/pista.webp';
 import NewImage6 from '../assets/images/events/barragem.webp';
@@ -12,29 +9,61 @@ import NewImage7 from '../assets/images/news/news3.webp';
 
 import instaOficial from '../assets/images/news/instaOficial.webp';
 import transparentOficial from '../assets/images/news/transparentOficial.webp';
-import { Link } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
+
+interface SlidesInterface {
+  image: string;
+  url: string;
+  title: string;
+  description: string;
+}
 
 export default () => {
-  const slidesData = [
-    {
-      img: NewImage,
-      title: 'Reunião votação de contas',
-      desc: 'Votação das contas do ex-prefeito Antonio José de Souza',
-      link: 'https://www.instagram.com/camaradeiati/',
-    },
-    {
-      img: NewImage2,
-      title: 'FUNVAPI concurso',
-      desc: 'Veja as mudanças',
-      link: 'https://funvapi.com.br/',
-    },
-    {
-      img: NewImage3,
-      title: 'Inauguração do ano legislativo',
-      desc: 'Confira o que aconteceu',
-      link: 'https://www.instagram.com/camaradeiati/',
-    },
-  ];
+  const [slidesData, setSlideData] = useState<SlidesInterface[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [errorLoad, setErrorLoad] = useState('');
+
+  const API_KEY = import.meta.env.VITE_GNEW_API;
+  const CACHE_KEY = 'gnews_cache_data';
+  const CACHE_TIME_KEY = 'gnews_cache_time';
+  const ONE_WEEK = 7 * 24 * 60 * 60 * 1000;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const cachedData = localStorage.getItem(CACHE_KEY);
+      const cachedTime: any | number | bigint = localStorage.getItem(CACHE_TIME_KEY);
+      const now = new Date().getTime();
+
+      if (cachedData && cachedTime && now - cachedTime < ONE_WEEK) {
+        setSlideData(JSON.parse(cachedData));
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const response = await fetch(
+          `https://gnews.io/api/v4/top-headlines?category=general&lang=pt&country=br&max=10&apikey=${API_KEY}`,
+        );
+        if (!response.ok) throw new Error('Falha ao buscar dados');
+
+        const data = await response.json();
+        const articles = data.articles || [];
+
+        localStorage.setItem(CACHE_KEY, JSON.stringify(articles));
+        localStorage.setItem(CACHE_TIME_KEY, now.toString());
+
+        setSlideData(articles);
+        setErrorLoad('');
+      } catch (error) {
+        setErrorLoad('Erro ao carregar notícias externas');
+        if (cachedData) setSlideData(JSON.parse(cachedData));
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (API_KEY) fetchData();
+  }, [API_KEY]);
 
   const newsIati = [
     {
@@ -75,43 +104,51 @@ export default () => {
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <article className="relative row-span-2 overflow-hidden rounded-lg">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            loop={true}
-            pagination={{
-              clickable: true,
-              bulletClass: 'swiper-pagination-bullet bg-white opacity-60 w-3 h-3 rounded-full',
-              bulletActiveClass: 'swiper-pagination-bullet-active bg-blue-500 opacity-100',
-            }}
-            className="h-[25rem]"
-          >
-            {slidesData.map((item, index) => (
-              <SwiperSlide key={index} className="relative group overflow-hidden">
-                <Link to={item.link}>
-                  <img
-                    src={item.img}
-                    className="w-full h-[25rem] object-cover"
-                    alt={`noticia-${index}`}
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-
-                  <div className="absolute bottom-0 left-0 p-6 text-white">
-                    <h2 className="text-2xl font-bold leading-tight">{item.title}</h2>
-                    <p className="text-md text-gray-200 mt-2">{item.desc}</p>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {loading ? (
+            errorLoad ? (
+              <div className="flex justify-center items-center h-64">
+                <p className="bg-red-100 text-red-500 p-5 border-b-4">{errorLoad}</p>
+              </div>
+            ) : (
+              <div className="flex justify-center items-center h-64">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-green-500"></div>
+              </div>
+            )
+          ) : (
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              loop={slidesData.length > 1}
+              pagination={{ clickable: true }}
+              className="h-[25rem]"
+            >
+              {slidesData.map((item, index) => (
+                <SwiperSlide key={index} className="relative group overflow-hidden">
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={item.image}
+                      className="w-full h-[25rem] object-cover"
+                      alt={item.title}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 p-6 text-white w-full">
+                      <h2 className="text-xl md:text-2xl font-bold leading-tight line-clamp-2">
+                        {item.title}
+                      </h2>
+                      <p className="text-sm text-gray-200 mt-2 line-clamp-2">{item.description}</p>
+                    </div>
+                  </a>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
         </article>
 
         <a
           target="_blank"
           href="https://www.instagram.com/camaradeiati/"
           style={{ backgroundImage: `url(${instaOficial})` }}
-          className={`block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105`}
+          className="block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
         ></a>
         <a
           target="_blank"
