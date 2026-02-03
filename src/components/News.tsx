@@ -12,6 +12,7 @@ import NewImage7 from '../assets/images/news/news3.webp';
 
 import instaOficial from '../assets/images/news/instaOficial.webp';
 import transparentOficial from '../assets/images/news/transparentOficial.webp';
+import { Link } from '@tanstack/react-router';
 
 export default () => {
   const slidesData = [
@@ -19,9 +20,20 @@ export default () => {
       img: NewImage,
       title: 'Reunião votação de contas',
       desc: 'Votação das contas do ex-prefeito Antonio José de Souza',
+      link: 'https://www.instagram.com/camaradeiati/',
     },
-    { img: NewImage2, title: 'FUNVAPI concurso', desc: 'Veja as mudanças' },
-    { img: NewImage3, title: 'Evento em Destaque', desc: 'Confira o que aconteceu' },
+    {
+      img: NewImage2,
+      title: 'FUNVAPI concurso',
+      desc: 'Veja as mudanças',
+      link: 'https://funvapi.com.br/',
+    },
+    {
+      img: NewImage3,
+      title: 'Inauguração do ano legislativo',
+      desc: 'Confira o que aconteceu',
+      link: 'https://www.instagram.com/camaradeiati/',
+    },
   ];
 
   const newsIati = [
@@ -76,18 +88,20 @@ export default () => {
           >
             {slidesData.map((item, index) => (
               <SwiperSlide key={index} className="relative group overflow-hidden">
-                <img
-                  src={item.img}
-                  className="w-full h-[25rem] object-cover"
-                  alt={`noticia-${index}`}
-                />
+                <Link to={item.link}>
+                  <img
+                    src={item.img}
+                    className="w-full h-[25rem] object-cover"
+                    alt={`noticia-${index}`}
+                  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <h2 className="text-2xl font-bold leading-tight">{item.title}</h2>
-                  <p className="text-md text-gray-200 mt-2">{item.desc}</p>
-                </div>
+                  <div className="absolute bottom-0 left-0 p-6 text-white">
+                    <h2 className="text-2xl font-bold leading-tight">{item.title}</h2>
+                    <p className="text-md text-gray-200 mt-2">{item.desc}</p>
+                  </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
