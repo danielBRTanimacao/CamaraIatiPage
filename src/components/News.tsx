@@ -14,7 +14,15 @@ import instaOficial from '../assets/images/news/instaOficial.webp';
 import concursoOficial from '../assets/images/news/concursoOficial.webp';
 
 export default () => {
-  const images = [NewImage3, NewImage, NewImage2];
+  const slidesData = [
+    {
+      img: NewImage,
+      title: 'Reunião votação de contas',
+      desc: 'Votação das contas do ex-prefeito Antonio José de Souza',
+    },
+    { img: NewImage2, title: 'FUNVAPI concurso', desc: 'Veja as mudanças' },
+    { img: NewImage3, title: 'Evento em Destaque', desc: 'Confira o que aconteceu' },
+  ];
 
   const newsIati = [
     {
@@ -66,9 +74,20 @@ export default () => {
             }}
             className="h-[25rem]"
           >
-            {images.map((img, index) => (
-              <SwiperSlide key={index}>
-                <img src={img} className="w-full h-[25rem] object-cover" alt={`noticia-${index}`} />
+            {slidesData.map((item, index) => (
+              <SwiperSlide key={index} className="relative group overflow-hidden">
+                <img
+                  src={item.img}
+                  className="w-full h-[25rem] object-cover"
+                  alt={`noticia-${index}`}
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+                <div className="absolute bottom-0 left-0 p-6 text-white">
+                  <h2 className="text-2xl font-bold leading-tight">{item.title}</h2>
+                  <p className="text-md text-gray-200 mt-2">{item.desc}</p>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
