@@ -11,7 +11,7 @@ import NewImage6 from '../assets/images/events/barragem.webp';
 import NewImage7 from '../assets/images/news/news3.webp';
 
 import instaOficial from '../assets/images/news/instaOficial.webp';
-import concursoOficial from '../assets/images/news/concursoOficial.webp';
+import transparentOficial from '../assets/images/news/transparentOficial.webp';
 
 export default () => {
   const slidesData = [
@@ -100,8 +100,8 @@ export default () => {
           className={`block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105`}
         ></a>
         <a
-          href="https://funvapi.com.br/"
-          style={{ backgroundImage: `url(${concursoOficial})` }}
+          href="https://tecnosolutions.inf.br/transparencia/iati/camara/"
+          style={{ backgroundImage: `url(${transparentOficial})` }}
           className="block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
         ></a>
       </section>
