@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
+import NewImage3 from '../assets/images/news/newImage2.webp';
 import NewImage4 from '../assets/images/events/reunion.webp';
 import NewImage5 from '../assets/images/events/pista.webp';
 import NewImage6 from '../assets/images/events/barragem.webp';
@@ -41,12 +42,14 @@ export default () => {
       }
 
       try {
-        const response = await fetch(
-          `https://gnews.io/api/v4/top-headlines?category=general&lang=pt&country=br&max=10&apikey=${API_KEY}`,
-        );
+        const targetUrl = `https://gnews.io/api/v4/top-headlines?category=general&lang=pt&country=br&max=10&apikey=${API_KEY}`;
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
+
+        const response = await fetch(proxyUrl);
         if (!response.ok) throw new Error('Falha ao buscar dados');
 
-        const data = await response.json();
+        const proxyData = await response.json();
+        const data = JSON.parse(proxyData.contents);
         const articles = data.articles || [];
 
         localStorage.setItem(CACHE_KEY, JSON.stringify(articles));
@@ -67,19 +70,23 @@ export default () => {
 
   const newsIati = [
     {
-      img: NewImage6,
-      title: 'Água para o povo local: Projeto promete abastecer a comunidade por décadas.',
+      img: NewImage3,
+      url: 'https://iati.pe.gov.br/concurso-publico-2025/',
+      title: 'A Prefeitura Municipal de Iati, no compromisso de fortalecer...',
     },
     {
       img: NewImage7,
+      url: '#',
       title: 'Falta de passagem dificulta locomoção e irrita moradores locais entenda...',
     },
     {
       img: NewImage4,
+      url: '#',
       title: 'Reunião na Câmara: Vereadores debatem projeto de lei para o orçamento municipal.',
     },
     {
       img: NewImage5,
+      url: '#',
       title:
         'Motocross na cidade: O melhor da região faz história e atrai pilotos e público de todo o país.',
     },
@@ -161,7 +168,7 @@ export default () => {
       <aside className="pt-5 text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 justify-items-center">
         {newsIati.map((item, key) => (
           <a
-            href="#"
+            href={item.url}
             key={key}
             className={`
               w-full max-w-xs 
