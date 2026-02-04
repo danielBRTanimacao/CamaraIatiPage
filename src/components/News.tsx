@@ -5,7 +5,6 @@ import 'swiper/swiper-bundle.css';
 import NewImage3 from '../assets/images/news/newImage2.webp';
 import NewImage4 from '../assets/images/events/reunion.webp';
 import NewImage5 from '../assets/images/events/pista.webp';
-import NewImage6 from '../assets/images/events/barragem.webp';
 import NewImage7 from '../assets/images/news/news3.webp';
 
 import instaOficial from '../assets/images/news/instaOficial.webp';
