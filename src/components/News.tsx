@@ -7,7 +7,17 @@ import NewImage4 from '../assets/images/events/reunion.webp';
 import NewImage5 from '../assets/images/events/pista.webp';
 import NewImage7 from '../assets/images/news/news3.webp';
 
-import { BsInstagram, BsSearch, BsGear, BsBook, BsPeople, BsFileEarmarkText } from 'react-icons/bs';
+import {
+  BsInstagram,
+  BsCash,
+  BsBook,
+  BsPeople,
+  BsFileEarmarkText,
+  BsCashStack,
+  BsInfo,
+  BsFileArrowDown,
+  BsBarChart,
+} from 'react-icons/bs';
 
 import { useEffect, useState } from 'react';
 
@@ -150,7 +160,7 @@ export default () => {
           )}
         </article>
 
-        <div className="flex flex-row flex-wrap gap-3 h-full content-start">
+        <div className="flex flex-row flex-wrap gap-3 h-full content-start pt-2">
           {[
             {
               label: 'Instagram oficial',
@@ -158,14 +168,14 @@ export default () => {
               icon: <BsInstagram size={24} />,
             },
             {
-              label: 'Transparência pública',
-              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/',
-              icon: <BsSearch size={24} />,
+              label: 'Receitas',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/receitas.faces',
+              icon: <BsCash size={24} />,
             },
             {
-              label: 'Legislação Municipal',
-              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/legislacaomunicipal.faces',
-              icon: <BsGear size={24} />,
+              label: 'Despesas',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/despesas.faces',
+              icon: <BsCashStack size={24} />,
             },
             {
               label: 'Glossário',
@@ -182,13 +192,28 @@ export default () => {
               href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/licitacoesecontratos.faces',
               icon: <BsFileEarmarkText size={24} />,
             },
+            {
+              label: 'Normativos',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/atosnormativos.faces',
+              icon: <BsFileArrowDown size={24} />,
+            },
+            {
+              label: 'Solicitar informações',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/solicitacao.faces',
+              icon: <BsInfo size={24} />,
+            },
+            {
+              label: 'Estatisticas',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/estatisticas.faces',
+              icon: <BsBarChart size={24} />,
+            },
           ].map((link, index) => (
             <a
               key={index}
               target="_blank"
               href={link.href}
               rel="noopener noreferrer"
-              className="flex-grow basis-[calc(33.333%-12px)] min-w-[120px] h-28 rounded-lg bg-green-700 hover:bg-green-800 transition-all duration-500 ease-in-out hover:scale-105 shadow-md flex flex-col items-center justify-center text-white font-bold text-center p-2 text-xs sm:text-sm gap-2"
+              className="flex-grow basis-[calc(33.333%-12px)] min-w-[120px] h-30 rounded-lg bg-green-700 hover:bg-green-800 transition-all duration-500 ease-in-out hover:scale-105 shadow-md flex flex-col items-center justify-center text-white font-bold text-center p-2 text-xs sm:text-sm gap-2"
             >
               <div>{link.icon}</div>
               <span>{link.label}</span>
