@@ -8,7 +8,8 @@ interface NewsInterface {
 
 export default () => {
   const [newsIati, setNewsIati] = useState<NewsInterface[]>([]);
-  const API_IATI = 'https://camaraiati.pe.gov.br/api/news';
+  const API_IATI = 'http://localhost:8000/api/news';
+  //const API_IATI = 'https://camaraiati.pe.gov.br/api/news';
   const [loadingNews, setLoadingNews] = useState(true);
   const [errorLoadNews, setErrorLoadNews] = useState('');
 
