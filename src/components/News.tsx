@@ -7,8 +7,8 @@ import NewImage4 from '../assets/images/events/reunion.webp';
 import NewImage5 from '../assets/images/events/pista.webp';
 import NewImage7 from '../assets/images/news/news3.webp';
 
-import instaOficial from '../assets/images/news/instaOficial.webp';
-import transparentOficial from '../assets/images/news/transparentOficial.webp';
+import { BsInstagram, BsSearch, BsGear, BsBook, BsPeople, BsFileEarmarkText } from 'react-icons/bs';
+
 import { useEffect, useState } from 'react';
 
 interface SlidesInterface {
@@ -150,18 +150,51 @@ export default () => {
           )}
         </article>
 
-        <a
-          target="_blank"
-          href="https://www.instagram.com/camaradeiati/"
-          style={{ backgroundImage: `url(${instaOficial})` }}
-          className="block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
-        ></a>
-        <a
-          target="_blank"
-          href="https://tecnosolutions.inf.br/transparencia/iati/camara/"
-          style={{ backgroundImage: `url(${transparentOficial})` }}
-          className="block h-40 w-full rounded-lg bg-cover bg-center transition-all duration-500 ease-in-out hover:scale-105"
-        ></a>
+        <div className="flex flex-row flex-wrap gap-3 h-full content-start">
+          {[
+            {
+              label: 'Instagram oficial',
+              href: 'https://www.instagram.com/camaradeiati/',
+              icon: <BsInstagram size={24} />,
+            },
+            {
+              label: 'Transparência pública',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/',
+              icon: <BsSearch size={24} />,
+            },
+            {
+              label: 'Legislação Municipal',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/legislacaomunicipal.faces',
+              icon: <BsGear size={24} />,
+            },
+            {
+              label: 'Glossário',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/glossario.faces',
+              icon: <BsBook size={24} />,
+            },
+            {
+              label: 'Quadro dos servidores',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/quadrofuncional.faces',
+              icon: <BsPeople size={24} />,
+            },
+            {
+              label: 'Contratos',
+              href: 'https://tecnosolutions.inf.br/transparencia/iati/camara/licitacoesecontratos.faces',
+              icon: <BsFileEarmarkText size={24} />,
+            },
+          ].map((link, index) => (
+            <a
+              key={index}
+              target="_blank"
+              href={link.href}
+              rel="noopener noreferrer"
+              className="flex-grow basis-[calc(33.333%-12px)] min-w-[120px] h-28 rounded-lg bg-green-700 hover:bg-green-800 transition-all duration-500 ease-in-out hover:scale-105 shadow-md flex flex-col items-center justify-center text-white font-bold text-center p-2 text-xs sm:text-sm gap-2"
+            >
+              <div>{link.icon}</div>
+              <span>{link.label}</span>
+            </a>
+          ))}
+        </div>
       </section>
 
       <aside className="pt-5 text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 justify-items-center">
