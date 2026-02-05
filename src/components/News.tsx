@@ -80,7 +80,7 @@ export default () => {
     },
     {
       img: NewImage4,
-      url: '#',
+      url: 'https://www.instagram.com/camaradeiati/',
       title: 'Reunião na Câmara: Vereadores debatem projeto de lei para o orçamento municipal.',
     },
     {
