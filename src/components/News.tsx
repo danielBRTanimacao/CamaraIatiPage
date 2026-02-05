@@ -2,11 +2,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
-import NewImage3 from '../assets/images/news/newImage2.webp';
-import NewImage4 from '../assets/images/events/reunion.webp';
-import NewImage5 from '../assets/images/events/pista.webp';
-import NewImage7 from '../assets/images/news/news3.webp';
-
 import {
   BsInstagram,
   BsCash,
@@ -26,6 +21,12 @@ interface SlidesInterface {
   url: string;
   title: string;
   description: string;
+}
+
+interface NewsInterface {
+  img: string;
+  url: string;
+  title: string;
 }
 
 export default () => {
@@ -77,29 +78,32 @@ export default () => {
     if (API_KEY) fetchData();
   }, [API_KEY]);
 
-  const newsIati = [
-    {
-      img: NewImage3,
-      url: 'https://iati.pe.gov.br/concurso-publico-2025/',
-      title: 'A Prefeitura Municipal de Iati, no compromisso de fortalecer...',
-    },
-    {
-      img: NewImage7,
-      url: '#',
-      title: 'Falta de passagem dificulta locomoção e irrita moradores locais entenda...',
-    },
-    {
-      img: NewImage4,
-      url: 'https://www.instagram.com/camaradeiati/',
-      title: 'Reunião na Câmara: Vereadores debatem projeto de lei para o orçamento municipal.',
-    },
-    {
-      img: NewImage5,
-      url: '#',
-      title:
-        'Motocross na cidade: O melhor da região faz história e atrai pilotos e público de todo o país.',
-    },
-  ];
+  const [newsIati, setNewsIati] = useState<NewsInterface[]>([]);
+  const API_IATI = 'https://camaraiati.pe.gov.br/api/news';
+  const [loadingNews, setLoadingNews] = useState(true);
+  const [errorLoadNews, setErrorLoadNews] = useState('');
+
+  useEffect(() => {
+    const fetchNewsIati = async () => {
+      try {
+        setLoadingNews(true);
+        const response = await fetch(API_IATI);
+
+        if (!response.ok) throw new Error('Erro ao carregar notícias de Iati');
+
+        const data = await response.json();
+
+        setNewsIati(data.slice(0, 4));
+      } catch (error: any) {
+        setErrorLoadNews(error.message);
+        console.error(error);
+      } finally {
+        setLoadingNews(false);
+      }
+    };
+
+    fetchNewsIati();
+  }, []);
 
   return (
     <>
@@ -222,23 +226,35 @@ export default () => {
         </div>
       </section>
 
-      <aside className="pt-5 text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 justify-items-center">
-        {newsIati.map((item, key) => (
-          <a
-            href={item.url}
-            key={key}
-            className={`
-              w-full max-w-xs 
-              ${key === 0 ? 'block' : 'hidden'} 
-              ${key === 1 ? 'sm:block' : ''} 
-              ${key === 2 ? 'md:block' : ''} 
-              ${key === 3 ? 'md:block' : ''}
-            `}
-          >
-            <img src={item.img} alt="img-noticia" className="w-full h-48 object-cover" />
-            <p className="text-gray-500 pt-2 text-base leading-4">{item.title}</p>
-          </a>
-        ))}
+      <aside className="pt-10 text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center">
+        {loadingNews ? (
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+          </div>
+        ) : errorLoadNews ? (
+          <div className="flex justify-center items-center h-64">
+            <p className="bg-red-100 text-red-500 p-5 border-b-4">{errorLoadNews}</p>
+          </div>
+        ) : newsIati.length > 0 ? (
+          newsIati.map((item, key) => (
+            <a href={item.url} key={key} className="w-full group overflow-hidden">
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  src={item.img}
+                  alt="Imagem noticia"
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <p className="text-gray-700 font-medium pt-3 text-sm leading-snug line-clamp-3 group-hover:text-green-700">
+                {item.title}
+              </p>
+            </a>
+          ))
+        ) : (
+          <div className="col-span-full py-10 text-gray-400 italic">
+            Nenhuma notícia local encontrada no momento.
+          </div>
+        )}
       </aside>
     </>
   );
