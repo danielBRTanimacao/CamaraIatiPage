@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-
 import {
   BsInstagram,
   BsCash,
@@ -13,7 +12,6 @@ import {
   BsFileArrowDown,
   BsBarChart,
 } from 'react-icons/bs';
-
 import { useEffect, useState } from 'react';
 import NewsAside from './ui/news/NewsAside';
 
@@ -29,32 +27,29 @@ export default () => {
   const [loading, setLoading] = useState(true);
   const [errorLoad, setErrorLoad] = useState('');
 
-  const API_KEY = import.meta.env.VITE_GNEW_API;
   const CACHE_KEY = 'gnews_cache_data';
   const CACHE_TIME_KEY = 'gnews_cache_time';
   const ONE_WEEK = 7 * 24 * 60 * 60 * 1000;
+  //const BACKEND_URL = 'http://localhost:8000/api/gnews';
+  const BACKEND_URL = 'https://camaraiati.pe.gov.br/api/gnews';
 
   useEffect(() => {
     const fetchData = async () => {
       const cachedData = localStorage.getItem(CACHE_KEY);
-      const cachedTime: any | number | bigint = localStorage.getItem(CACHE_TIME_KEY);
+      const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
       const now = new Date().getTime();
 
-      if (cachedData && cachedTime && now - cachedTime < ONE_WEEK) {
+      if (cachedData && cachedTime && now - Number(cachedTime) < ONE_WEEK) {
         setSlideData(JSON.parse(cachedData));
         setLoading(false);
         return;
       }
 
       try {
-        const targetUrl = `https://gnews.io/api/v4/top-headlines?category=general&lang=pt&country=br&max=10&apikey=${API_KEY}`;
-        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
+        const response = await fetch(BACKEND_URL);
+        if (!response.ok) throw new Error();
 
-        const response = await fetch(proxyUrl);
-        if (!response.ok) throw new Error('Falha ao buscar dados');
-
-        const proxyData = await response.json();
-        const data = JSON.parse(proxyData.contents);
+        const data = await response.json();
         const articles = data.articles || [];
 
         localStorage.setItem(CACHE_KEY, JSON.stringify(articles));
@@ -70,8 +65,8 @@ export default () => {
       }
     };
 
-    if (API_KEY) fetchData();
-  }, [API_KEY]);
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -95,7 +90,7 @@ export default () => {
           {loading ? (
             errorLoad ? (
               <div className="flex justify-center items-center h-64">
-                <p className="bg-red-100 text-red-500 p-5 border-b-4">{errorLoad}</p>
+                <p className="bg-red-100 text-red-500 p-5 border-b-4 text-center">{errorLoad}</p>
               </div>
             ) : (
               <div className="flex justify-center items-center h-64">
