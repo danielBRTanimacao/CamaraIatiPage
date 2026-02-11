@@ -16,7 +16,7 @@ export default () => {
   const [councilors, setCouncilors] = useState<Councilor[]>([]);
   const [errorLoad, setErrorLoad] = useState('');
   const [loading, setLoading] = useState(true);
-  const API_IATI = 'https://camaraiati.pe.gov.br/api/counciliors';
+  const API_IATI = 'https://camaraiati.pe.gov.br/api/councilors';
 
   useEffect(() => {
     const fetchData = async () => {
