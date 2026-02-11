@@ -152,39 +152,7 @@ export default () => {
         </ul>
       </aside>
 
-      <nav className="container">
-        <form method="get" className="py-5 pb-10">
-          <div className="relative">
-            <label
-              htmlFor="searchInput"
-              className="absolute inset-y-0 left-2 grid w-8 place-content-center cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="h-5 w-5 text-gray-400"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                />
-              </svg>
-            </label>
-            <input
-              type="text"
-              id="searchInput"
-              name="q"
-              required
-              placeholder="Digite o que precisa..."
-              className="w-full rounded-full border border-gray-300 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-            />
-          </div>
-        </form>
-      </nav>
+      <div className="pt-20"></div>
     </>
   );
 };
