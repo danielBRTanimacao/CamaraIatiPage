@@ -16,13 +16,12 @@ export default () => {
   const [councilors, setCouncilors] = useState<Councilor[]>([]);
   const [errorLoad, setErrorLoad] = useState('');
   const [loading, setLoading] = useState(true);
+  const API_IATI = 'https://camaraiati.pe.gov.br/api/counciliors';
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/parlamentares/legislatura/1/parlamentares/?get_all=true`,
-        );
+        const response = await fetch(API_IATI);
         if (!response.ok) throw new Error('Falha ao buscar dados');
         const data = await response.json();
         setCouncilors(data);
@@ -46,7 +45,7 @@ export default () => {
     );
   if (errorLoad)
     return (
-      <div className=" text-red-700 flex p-8 items-center justify-center font-bold">
+      <div className=" text-red-500 flex p-8 items-center justify-center font-bold">
         <p className="bg-red-100 p-5 border-b-4">{errorLoad}</p>
       </div>
     );
