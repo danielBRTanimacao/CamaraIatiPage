@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type Key } from 'react';
 import NotFound from '../assets/svgs/not-found.svg';
 import ModalBase from './modals/ModalBase';
 import Calendar, { type TileClassNameFunc } from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 const monthToNumber: { [key: string]: number } = {
   Janeiro: 0,
@@ -26,14 +28,13 @@ interface EventsInterface {
   time: string;
   title: string;
   adress: string;
-  img: string;
+  img: string | string[];
 }
 
 export default () => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [date, setDate] = useState(new Date());
-  //const API_IATI = 'http://localhost:8000/api/events';
-  const API_IATI = 'https://camaraiati.pe.gov.br/api/events';
+  const API_IATI = 'http://localhost:8000/api/events';
   const [eventData, setEventData] = useState<EventsInterface[]>([]);
   const [loading, setLoading] = useState(true);
   const [errorLoad, setErrorLoad] = useState('');
@@ -94,11 +95,26 @@ export default () => {
             >
               {item ? (
                 <>
-                  <div
-                    className="h-48 bg-no-repeat bg-cover bg-center"
-                    style={{ backgroundImage: `url(${item.img})` }}
-                  >
-                    <div className="bg-white float-left m-3 py-2 px-7 text-center rounded-lg shadow-md">
+                  <div className="h-48 w-full relative">
+                    <Swiper
+                      modules={[Autoplay, Pagination]}
+                      autoplay={{ delay: 3000, disableOnInteraction: false }}
+                      allowTouchMove={false}
+                      loop={true}
+                      className="h-full w-full"
+                    >
+                      {(Array.isArray(item.img) ? item.img : [item.img]).map(
+                        (url: any, imgIndex: Key | null | undefined) => (
+                          <SwiperSlide key={imgIndex}>
+                            <div
+                              className="h-full w-full bg-no-repeat bg-cover bg-center"
+                              style={{ backgroundImage: `url(${url})` }}
+                            />
+                          </SwiperSlide>
+                        ),
+                      )}
+                    </Swiper>
+                    <div className="absolute top-3 left-3 z-10 bg-white py-2 px-7 text-center rounded-lg shadow-md pointer-events-none">
                       <h3 className="font-bold text-xl leading-none">{item.day}</h3>
                       <p className="font-light opacity-50 text-xs uppercase">
                         {item.month.slice(0, 3)}
