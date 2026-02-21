@@ -34,7 +34,8 @@ interface EventsInterface {
 export default () => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [date, setDate] = useState(new Date());
-  const API_IATI = 'http://localhost:8000/api/events';
+  const API_IATI = 'https://camaraiati.pe.gov.br/api/events';
+  //const API_IATI = 'http://localhost:8000/api/events';
   const [eventData, setEventData] = useState<EventsInterface[]>([]);
   const [loading, setLoading] = useState(true);
   const [errorLoad, setErrorLoad] = useState('');
