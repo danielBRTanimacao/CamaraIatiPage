@@ -64,12 +64,12 @@ export default () => {
               </li>
               <li>
                 <Link
-                  to="https://wa.me/5587981304679"
+                  to="https://wa.me/5587981507796"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition duration-300"
                 >
-                  Telefone: (87) 98130-4679
+                  Telefone: (87) 98150-7796
                 </Link>
               </li>
               <li>
