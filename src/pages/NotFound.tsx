@@ -1,11 +1,8 @@
-import Accessibility from '../components/ui/fastTrack/Accessibility';
-
 import NotFound from '../assets/svgs/not-found.svg';
 
 export default () => {
   return (
     <>
-      <Accessibility />
       <header
         className="
       relative 

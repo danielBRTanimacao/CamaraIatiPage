@@ -2,14 +2,12 @@ import News from './components/News';
 import Events from './components/Events';
 import Councilors from './components/Councilors';
 import Footer from './components/Footer';
-import Accessibility from './components/ui/fastTrack/Accessibility';
 import Header from './components/Header';
 import BackPageButton from './components/ui/fastTrack/BackPageButton';
 
 export default () => {
   return (
     <>
-      <Accessibility />
       <BackPageButton />
       <Header />
       <main className="container">
