@@ -35,7 +35,7 @@ const routes = [
   }),
   createRoute({
     getParentRoute: () => rootRoute,
-    path: '/admin/content',
+    path: '/super/camara/content',
     component: ContentController,
   }),
   createRoute({
