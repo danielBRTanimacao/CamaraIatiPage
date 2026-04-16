@@ -4,12 +4,14 @@ import Councilors from './components/Councilors';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import BackPageButton from './components/ui/fastTrack/BackPageButton';
+import FastSearch from './components/ui/landing/FastSearch';
 
 export default () => {
   return (
     <>
       <BackPageButton />
       <Header />
+      <FastSearch />
       <main className="container">
         <News />
         <h1 className="pt-5 text-2xl font-extrabold flex items-center gap-3">
