@@ -12,6 +12,7 @@ export default () => {
       <BackPageButton />
       <Header />
       <FastSearch />
+      <div className="pt-5"></div>
       <main className="container">
         <News />
         <h1 className="pt-5 text-2xl font-extrabold flex items-center gap-3">

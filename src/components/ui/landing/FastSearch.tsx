@@ -19,12 +19,12 @@ export default () => {
   const showResultsSearch = search.length > 0 && isFocused;
 
   return (
-    <div className="p-8 w-full">
+    <div className="container">
       {showResultsSearch && (
         <div className="fixed inset-0 bg-black/40 z-40" onClick={() => setIsFocused(false)} />
       )}
 
-      <div className={`relative z-50 max-w-md mx-auto`}>
+      <div className={`relative z-50`}>
         <form className="relative flex items-center">
           <div className="absolute left-3 pt-0.5 text-gray-400 pointer-events-none">
             <BiSearch size={20} />

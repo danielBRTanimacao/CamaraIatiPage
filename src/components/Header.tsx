@@ -151,8 +151,7 @@ export default () => {
           ))}
         </ul>
       </aside>
-
-      <div className="pt-20"></div>
+      <div className="pb-5"></div>
     </>
   );
 };
