@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
 
 const inicialItens = [
-  { id: 1, nome: 'Java Web Avançado' },
-  { id: 2, nome: 'React + Tailwind' },
-  { id: 3, nome: 'Spring Boot Microservices' },
-  { id: 4, nome: 'Docker para Devs' },
+  { id: 1, nome: 'Municipio', url: '#' },
+  { id: 2, nome: 'Sobre a câmara', url: '#' },
+  { id: 3, nome: 'Vereadores', url: '#' },
+  { id: 4, nome: 'Transparencia publica', url: '#' },
 ];
 
 export default () => {
@@ -49,7 +49,7 @@ export default () => {
                     key={item.id}
                     className="p-4 hover:bg-blue-50 cursor-pointer border-b border-gray-50 last:border-none transition-colors"
                   >
-                    <a href="#" className="font-medium hover:underline text-gray-800">
+                    <a href={item.url} className="font-medium hover:underline text-gray-800">
                       {item.nome}
                     </a>
                   </li>
