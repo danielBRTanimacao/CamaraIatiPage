@@ -16,7 +16,7 @@ export default () => {
     item.nome.toLowerCase().includes(search.toLowerCase()),
   );
 
-  const showResultsSearch = search.length > 0 && isFocused;
+  const showResultsSearch = search.length > 0 && isFocused; 
 
   return (
     <div className="container">
