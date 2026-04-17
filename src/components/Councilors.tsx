@@ -45,7 +45,7 @@ export default () => {
     );
   if (errorLoad)
     return (
-      <div className=" text-red-500 flex p-8 items-center justify-center font-bold">
+      <div className=" text-red-500 flex p-8 items-center justify-center">
         <p className="bg-red-100 p-5 border-b-4">{errorLoad}</p>
       </div>
     );

@@ -16,7 +16,7 @@ export default () => {
     item.nome.toLowerCase().includes(search.toLowerCase()),
   );
 
-  const showResultsSearch = search.length > 0 && isFocused; 
+  const showResultsSearch = search.length > 0 && isFocused;
 
   return (
     <div className="container">
@@ -49,7 +49,9 @@ export default () => {
                     key={item.id}
                     className="p-4 hover:bg-blue-50 cursor-pointer border-b border-gray-50 last:border-none transition-colors"
                   >
-                    <p className="font-medium text-gray-800">{item.nome}</p>
+                    <a href="#" className="font-medium hover:underline text-gray-800">
+                      {item.nome}
+                    </a>
                   </li>
                 ))
               ) : (
