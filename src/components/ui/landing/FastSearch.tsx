@@ -40,8 +40,8 @@ export default () => {
 
           <input
             type="text"
-            placeholder="O que você procura? (ex: leis, salários...)"
-            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all shadow-md bg-white text-gray-700"
+            placeholder="O que você procura?"
+            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all shadow-md bg-white text-gray-700"
             value={search}
             onFocus={() => setIsFocused(true)}
             onChange={(e) => setSearch(e.target.value)}
@@ -56,17 +56,17 @@ export default () => {
                   <li key={item.id} className="border-b border-gray-50 last:border-none">
                     <a
                       href={item.url}
-                      className="flex items-center justify-between p-4 hover:bg-blue-50 transition-colors group"
+                      className="flex items-center justify-between p-4 hover:bg-green-50 transition-colors group"
                     >
                       <div>
-                        <span className="block font-semibold text-gray-800 group-hover:text-blue-700">
+                        <span className="block font-semibold text-gray-800 group-hover:text-green-700">
                           {item.nome}
                         </span>
                         <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">
                           {item.categoria}
                         </span>
                       </div>
-                      <div className="text-gray-300 group-hover:text-blue-400">
+                      <div className="text-gray-300 group-hover:text-green-400">
                         <BiSearch size={16} />
                       </div>
                     </a>
