@@ -82,6 +82,7 @@ export default () => {
                   Endereço: R. Padre Nelson B Carvalho
                 </Link>
               </li>
+              <li>Horarios: 8:00 às 13:00</li>
             </ul>
           </div>
 
