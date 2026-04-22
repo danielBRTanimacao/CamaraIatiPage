@@ -83,6 +83,7 @@ export default () => {
                 </Link>
               </li>
               <li>Horarios: 8:00 às 13:00</li>
+              <li>Reuniões: Todas as Sextas a partir das 15:00 </li>
             </ul>
           </div>
 
