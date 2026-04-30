@@ -2,13 +2,54 @@ import { useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
 
 const inicialItens = [
-  { id: 1, nome: 'História do Município', categoria: 'Institucional', url: '#' },
-  { id: 2, nome: 'Mesa Diretora', categoria: 'Câmara', url: '#' },
-  { id: 3, nome: 'Lista de Vereadores', categoria: 'Parlamentares', url: '#' },
-  { id: 4, nome: 'Folha de Pagamento', categoria: 'Transparência', url: '#' },
-  { id: 5, nome: 'Licitações e Contratos', categoria: 'Transparência', url: '#' },
-  { id: 6, nome: 'Leis Municipais', categoria: 'Legislativo', url: '#' },
-  { id: 7, nome: 'Ordens do Dia', categoria: 'Legislativo', url: '#' },
+  {
+    id: 1,
+    nome: 'História do Município',
+    categoria: 'Institucional',
+    url: 'https://camaraiati.pe.gov.br/municipio',
+  },
+  {
+    id: 2,
+    nome: 'Mesa Diretora',
+    categoria: 'Câmara',
+    url: 'http://103.199.185.123:8084/mesa-diretora/',
+  },
+  {
+    id: 3,
+    nome: 'Lista de Vereadores',
+    categoria: 'Parlamentares',
+    url: 'http://103.199.185.123:8084/parlamentar/',
+  },
+  {
+    id: 4,
+    nome: 'Folha de Pagamento',
+    categoria: 'Transparência',
+    url: 'https://tecnosolutions.inf.br/transparencia/iati/camara/receitas.faces',
+  },
+  {
+    id: 5,
+    nome: 'Licitações e Contratos',
+    categoria: 'Transparência',
+    url: 'https://tecnosolutions.inf.br/transparencia/iati/camara/licitacoesecontratos.faces',
+  },
+  {
+    id: 6,
+    nome: 'Leis Municipais',
+    categoria: 'Legislativo',
+    url: 'https://tecnosolutions.inf.br/transparencia/iati/camara/legislacaomunicipal.faces',
+  },
+  {
+    id: 7,
+    nome: 'Ordens do Dia',
+    categoria: 'Legislativo',
+    url: 'https://tecnosolutions.inf.br/transparencia/iati/camara/outrosatos.faces',
+  },
+  {
+    id: 8,
+    nome: 'Acompanhamento de Ações e Programas',
+    categoria: 'Legislativo',
+    url: 'https://tecnosolutions.inf.br/transparencia/iati/camara/acoes.faces',
+  },
 ];
 
 export default () => {
