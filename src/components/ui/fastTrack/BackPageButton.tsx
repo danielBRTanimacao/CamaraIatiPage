@@ -6,11 +6,7 @@ export default () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener('scroll', toggleVisibility);
@@ -29,6 +25,7 @@ export default () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
+          type="button"
           className="cursor-pointer fixed bottom-5 right-5 z-50 p-3 rounded-full bg-green-700 text-white shadow-lg transition-all duration-300 hover:bg-green-800 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
           aria-label="Voltar ao topo"
         >

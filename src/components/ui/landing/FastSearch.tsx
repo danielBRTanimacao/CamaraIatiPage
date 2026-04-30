@@ -50,6 +50,18 @@ const inicialItens = [
     categoria: 'Legislativo',
     url: 'https://tecnosolutions.inf.br/transparencia/iati/camara/acoes.faces',
   },
+  {
+    id: 9,
+    nome: 'Atas de Registro de Preços',
+    categoria: 'Transparência',
+    url: 'https://tecnosolutions.inf.br/transparencia/iati/camara/atosoficiais.faces?tipo=ATAS%20DE%20REGISTRO%20DE%20PRE%C3%87OS',
+  },
+  {
+    id: 10,
+    nome: 'Glossário',
+    categoria: 'Transparência',
+    url: 'https://tecnosolutions.inf.br/transparencia/iati/camara/glossario.faces',
+  },
 ];
 
 export default () => {
