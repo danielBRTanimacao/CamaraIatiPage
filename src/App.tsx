@@ -5,10 +5,12 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import BackPageButton from './components/ui/fastTrack/BackPageButton';
 import FastSearch from './components/ui/landing/FastSearch';
+import Accessibility from './components/ui/landing/Acessibility';
 
 export default () => {
   return (
     <>
+      <Accessibility />
       <BackPageButton />
       <Header />
       <FastSearch />
