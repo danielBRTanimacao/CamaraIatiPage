@@ -130,7 +130,7 @@ export default () => {
         <div className="flex flex-row flex-wrap gap-3 h-full content-start pt-2">
           {[
             {
-              label: 'Instagram oficial',
+              label: 'Transmissão das seções',
               href: 'https://www.instagram.com/camaradeiati/',
               icon: <BsInstagram size={24} />,
             },
